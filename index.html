@@ -1,0 +1,1247 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Municipalidad de Vicuña</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --fondo: #f5f1e9;
+            --fondo-claro: #fbf9f5;
+            --beige: #e8dfd0;
+            --cafe: #6b5745;
+            --cafe-oscuro: #382f27;
+            --texto: #3d3933;
+            --texto-secundario: #777064;
+            --linea: #ded6ca;
+            --blanco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            background-color: var(--fondo);
+            color: var(--texto);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .contenedor {
+            width: min(1180px, 90%);
+            margin: 0 auto;
+        }
+
+        /* ENCABEZADO Y MENÚ */
+
+        .encabezado {
+            position: relative;
+            z-index: 1000;
+            background: var(--fondo-claro);
+        }
+
+        .barra-navegacion {
+            width: min(1320px, 92%);
+            min-height: 88px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .marca {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--cafe-oscuro);
+            flex-shrink: 0;
+        }
+
+        .marca-simbolo {
+            width: 43px;
+            height: 37px;
+            color: #8B7058;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .marca-simbolo svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .marca-texto {
+            display: block;
+            line-height: normal;
+        }
+
+        .marca-principal {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 500;
+            line-height: 1;
+            color: var(--cafe-oscuro);
+            letter-spacing: 0;
+        }
+
+        .marca-secundaria {
+            display: block;
+            margin-top: 6px;
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #76634E;
+        }
+
+        nav {
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            gap: 27px;
+            list-style: none;
+            flex: 1;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            list-style: none;
+        }
+
+        .menu a {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--texto);
+            white-space: nowrap;
+            transition: color .2s;
+        }
+
+        .menu a:hover,
+        .menu a.activo {
+            color: #8B7058;
+        }
+
+        .menu a.boton-tramites {
+            background: #A7C1D6;
+            padding: 13px 17px;
+            border-radius: 2px;
+            color: #3E2F27;
+        }
+
+        .menu a.boton-tramites:hover {
+            color: #3E2F27;
+        }
+
+        .menu-movil {
+            display: none;
+            background: none;
+            border: 1px solid var(--linea);
+            padding: 9px 12px;
+            color: var(--cafe-oscuro);
+            font-family: inherit;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        /* PORTADA PRINCIPAL */
+
+        .portada {
+            min-height: 600px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(25, 23, 20, 0.48),
+                    rgba(25, 23, 20, 0.48)
+                ),
+                url("./fondo.png") center 55% / cover no-repeat;
+        }
+
+        .portada-contenido {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            padding: 100px 0;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            margin-bottom: 22px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+        }
+
+        .portada h1 {
+            max-width: 700px;
+            margin-bottom: 24px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 6vw, 72px);
+            font-weight: 400;
+            line-height: 1.08;
+            letter-spacing: -1px;
+        }
+
+        .portada p {
+            max-width: 530px;
+            margin-bottom: 32px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .boton-claro {
+            display: inline-block;
+            padding: 14px 22px;
+            background-color: var(--fondo-claro);
+            color: var(--cafe-oscuro);
+            font-size: 12px;
+            font-weight: 700;
+            transition: background-color 0.2s ease;
+        }
+
+        .boton-claro:hover {
+            background-color: var(--beige);
+        }
+
+        /* ACCESOS DIRECTOS */
+
+        .accesos {
+            padding: 76px 0;
+            background-color: var(--fondo-claro);
+        }
+
+        .encabezado-seccion {
+            margin-bottom: 34px;
+        }
+
+        .sobrelinea {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--cafe);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .titulo-seccion {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(30px, 4vw, 43px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--cafe-oscuro);
+        }
+
+        .descripcion-seccion {
+            max-width: 620px;
+            margin-top: 14px;
+            color: var(--texto-secundario);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .accesos-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--linea);
+            border-bottom: 1px solid var(--linea);
+        }
+
+        .acceso {
+            min-height: 175px;
+            padding: 28px 22px;
+            border-right: 1px solid var(--linea);
+            transition: background-color 0.2s ease;
+        }
+
+        .acceso:first-child {
+            border-left: 1px solid var(--linea);
+        }
+
+        .acceso:hover {
+            background-color: var(--beige);
+        }
+
+        .numero-acceso {
+            display: block;
+            margin-bottom: 26px;
+            color: var(--cafe);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .acceso h3 {
+            margin-bottom: 9px;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--cafe-oscuro);
+        }
+
+        .acceso p {
+            color: var(--texto-secundario);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .flecha {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--cafe);
+            font-size: 18px;
+        }
+
+        /* AVISOS IMPORTANTES */
+
+        .avisos {
+            padding: 80px 0;
+            background-color: var(--beige);
+        }
+
+        .avisos-contenido {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .avisos-texto h2 {
+            max-width: 550px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 46px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--cafe-oscuro);
+        }
+
+        .avisos-texto p {
+            max-width: 540px;
+            margin-bottom: 25px;
+            color: var(--texto-secundario);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .enlace-texto {
+            display: inline-block;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--cafe);
+            color: var(--cafe-oscuro);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .avisos-imagen {
+            min-height: 300px;
+            background:
+                linear-gradient(
+                    rgba(55, 45, 35, 0.08),
+                    rgba(55, 45, 35, 0.08)
+                ),
+                url("./imagen 1.jpeg") center / cover no-repeat;
+        }
+
+        /* NOTICIAS */
+
+        .noticias {
+            padding: 82px 0;
+            background-color: var(--fondo-claro);
+        }
+
+        .noticias-cabecera {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            margin-bottom: 34px;
+        }
+
+        .noticias-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .noticia {
+            border-bottom: 1px solid var(--linea);
+            padding-bottom: 22px;
+        }
+
+        .noticia-imagen {
+            height: 230px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background-color: var(--beige);
+        }
+
+        .noticia-imagen img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.4s ease;
+        }
+
+        .noticia:hover .noticia-imagen img {
+            transform: scale(1.03);
+        }
+
+        .noticia-categoria {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--cafe);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .noticia h3 {
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.35;
+            color: var(--cafe-oscuro);
+        }
+
+        .noticia p {
+            color: var(--texto-secundario);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .noticia .enlace-texto {
+            margin-top: 17px;
+        }
+
+        /* TURISMO Y TERRITORIO */
+
+        .territorio {
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(40, 39, 32, 0.72),
+                    rgba(40, 39, 32, 0.13)
+                ),
+                url("./cielo.jpg") center / cover no-repeat;
+        }
+
+        .territorio-contenido {
+            max-width: 590px;
+            padding: 90px 0;
+        }
+
+        .territorio .sobrelinea {
+            color: #eee2ce;
+        }
+
+        .territorio h2 {
+            margin-bottom: 22px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(38px, 5vw, 58px);
+            font-weight: 400;
+            line-height: 1.12;
+        }
+
+        .territorio p {
+            max-width: 500px;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .boton-borde {
+            display: inline-block;
+            padding: 13px 21px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .boton-borde:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* MUNICIPALIDAD */
+
+        .municipalidad {
+            padding: 82px 0;
+            background-color: var(--fondo);
+        }
+
+        .municipalidad-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .municipalidad-texto p {
+            margin-bottom: 18px;
+            color: var(--texto-secundario);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .municipalidad-datos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-top: 1px solid var(--linea);
+        }
+
+        .dato {
+            padding: 23px 18px 23px 0;
+            border-bottom: 1px solid var(--linea);
+        }
+
+        .dato:nth-child(odd) {
+            border-right: 1px solid var(--linea);
+        }
+
+        .dato:nth-child(even) {
+            padding-left: 22px;
+        }
+
+        .dato h3 {
+            margin-bottom: 7px;
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            font-weight: 500;
+            color: var(--cafe-oscuro);
+        }
+
+        .dato p {
+            color: var(--texto-secundario);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* PIE DE PÁGINA */
+
+        .pie {
+            padding: 45px 0 25px;
+            background-color: var(--cafe-oscuro);
+            color: white;
+        }
+
+        .pie-superior {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 40px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .pie .marca-principal {
+            color: white;
+        }
+
+        .pie .marca-secundaria {
+            color: #d3c6b4;
+        }
+
+        .pie-descripcion {
+            max-width: 340px;
+            margin-top: 15px;
+            color: #d7cec2;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .pie-enlaces {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .pie-enlaces a {
+            color: #eee5da;
+            font-size: 12px;
+        }
+
+        .pie-enlaces a:hover {
+            text-decoration: underline;
+        }
+
+        .pie-inferior {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 22px;
+            color: #c9beb0;
+            font-size: 11px;
+        }
+
+        /* DISEÑO RESPONSIVO */
+
+        @media (max-width: 1050px) {
+            .barra-navegacion {
+                gap: 20px;
+            }
+
+            .menu {
+                gap: 16px;
+            }
+
+            .menu a {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .barra-navegacion {
+                width: calc(100% - 40px);
+                min-height: 82px;
+                flex-wrap: wrap;
+                gap: 16px;
+                padding: 18px 0;
+            }
+
+            .menu-movil {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                padding: 15px 20px;
+                background-color: var(--fondo-claro);
+                border-bottom: 1px solid var(--linea);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .menu.activo {
+                display: flex;
+            }
+
+            .menu a {
+                padding: 13px 0;
+                border-bottom: 1px solid var(--linea);
+                font-size: 12px;
+            }
+
+            .menu a.boton-tramites {
+                margin-top: 12px;
+                padding: 13px;
+                text-align: center;
+            }
+
+            .portada {
+                min-height: 520px;
+                background-position: center;
+            }
+
+            .accesos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .acceso:nth-child(3) {
+                border-left: 1px solid var(--linea);
+            }
+
+            .acceso:nth-child(1),
+            .acceso:nth-child(2) {
+                border-bottom: 1px solid var(--linea);
+            }
+
+            .avisos-contenido {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .avisos-imagen {
+                min-height: 260px;
+            }
+
+            .noticias-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .municipalidad-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .contenedor {
+                width: 88%;
+            }
+
+            .barra-navegacion {
+                width: calc(100% - 30px);
+                gap: 12px;
+            }
+
+            .marca-principal {
+                font-size: 22px;
+            }
+
+            .marca-simbolo {
+                width: 35px;
+                height: 34px;
+            }
+
+            .marca-secundaria {
+                font-size: 8px;
+                letter-spacing: 1.5px;
+            }
+
+            .portada {
+                min-height: 500px;
+            }
+
+            .portada-contenido {
+                padding: 75px 0;
+            }
+
+            .portada h1 {
+                font-size: 43px;
+            }
+
+            .portada p {
+                font-size: 14px;
+            }
+
+            .accesos,
+            .avisos,
+            .noticias,
+            .municipalidad {
+                padding: 58px 0;
+            }
+
+            .accesos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .acceso,
+            .acceso:first-child,
+            .acceso:nth-child(3) {
+                min-height: auto;
+                padding: 22px 18px;
+                border-left: 1px solid var(--linea);
+                border-right: 1px solid var(--linea);
+                border-bottom: 1px solid var(--linea);
+            }
+
+            .numero-acceso {
+                margin-bottom: 12px;
+            }
+
+            .noticias-cabecera {
+                align-items: start;
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .noticias-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .noticia-imagen {
+                height: 220px;
+            }
+
+            .territorio {
+                min-height: 430px;
+                background-position: center;
+            }
+
+            .territorio-contenido {
+                padding: 65px 0;
+            }
+
+            .territorio h2 {
+                font-size: 40px;
+            }
+
+            .municipalidad-datos {
+                grid-template-columns: 1fr;
+            }
+
+            .dato:nth-child(odd) {
+                border-right: none;
+            }
+
+            .dato:nth-child(even) {
+                padding-left: 0;
+            }
+
+            .pie-superior {
+                flex-direction: column;
+                gap: 28px;
+            }
+
+            .pie-enlaces {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .pie-inferior {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO Y MENÚ -->
+
+    <header class="encabezado">
+        <div class="contenedor barra-navegacion">
+
+            <a href="index.html" class="marca" aria-label="Municipalidad de Vicuña, inicio">
+                <span class="marca-simbolo" aria-hidden="true">
+                    <svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 34 17 13 26 25 35 7 53 34" />
+                        <path d="M12 34h32M21 34l7-9 7 9M7 39h42" />
+                    </svg>
+                </span>
+
+                <span class="marca-texto">
+                    <span class="marca-principal">Vicuña</span>
+                    <span class="marca-secundaria">MUNICIPALIDAD</span>
+                </span>
+            </a>
+
+            <button class="menu-movil" id="botonMenu"
+                aria-expanded="false" aria-controls="menuPrincipal">
+                Menú ☰
+            </button>
+
+            <nav aria-label="Navegación principal">
+                <ul class="menu" id="menuPrincipal">
+                    <li><a class="activo" href="index.html#inicio">Inicio</a></li>
+                    <li><a href="municipalidad.html#autoridades">Municipalidad</a></li>
+                    <li><a href="educacion.html">Educación Y Salud</a></li>
+                    <li><a href="tramites.html">Trámites y servicios</a></li>
+                    <li><a href="index.html#noticias">Noticias</a></li>
+                    <li><a href="index.html#territorio">Turismo y territorio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="tramites.html" class="boton-tramites">Trámites en línea ↗</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PORTADA PRINCIPAL -->
+
+        <section class="portada" id="inicio">
+            <div class="contenedor">
+                <div class="portada-contenido">
+
+                    <span class="etiqueta">Municipalidad de Vicuña</span>
+
+                    <h1>Trabajamos por el desarrollo de nuestra comuna</h1>
+
+                    <p>
+                        Conoce la gestión municipal, accede a los servicios y
+                        trámites disponibles, y encuentra información relevante
+                        para ti y tu comunidad.
+                    </p>
+
+                    <a href="municipalidad.html" class="boton-claro">
+                        Conoce nuestra municipalidad →
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ACCESOS DIRECTOS -->
+
+        <section class="accesos" id="servicios">
+            <div class="contenedor">
+
+                <div class="encabezado-seccion">
+                    <span class="sobrelinea">Información municipal</span>
+
+                    <h2 class="titulo-seccion">¿Qué necesitas hacer?</h2>
+
+                    <p class="descripcion-seccion">
+                        Encuentra de manera rápida la información y los servicios
+                        más importantes de la municipalidad.
+                    </p>
+                </div>
+
+                <div class="accesos-grid">
+
+                    <a href="tramites.html" class="acceso">
+                        <span class="numero-acceso">01 / SERVICIOS</span>
+                        <h3>Trámites municipales</h3>
+                        <p>Información sobre trámites y servicios disponibles.</p>
+                        <span class="flecha">↗</span>
+                    </a>
+
+                    <a href="#noticias" class="acceso">
+                        <span class="numero-acceso">02 / ACTUALIDAD</span>
+                        <h3>Noticias</h3>
+                        <p>Conoce las novedades y actividades de la comuna.</p>
+                        <span class="flecha">↗</span>
+                    </a>
+
+                    <a href="municipalidad.html" class="acceso">
+                        <span class="numero-acceso">03 / MUNICIPIO</span>
+                        <h3>La municipalidad</h3>
+                        <p>Conoce la organización y el trabajo municipal.</p>
+                        <span class="flecha">↗</span>
+                    </a>
+
+                    <a href="#territorio" class="acceso">
+                        <span class="numero-acceso">04 / TERRITORIO</span>
+                        <h3>Turismo y territorio</h3>
+                        <p>Descubre los paisajes y atractivos de Vicuña.</p>
+                        <span class="flecha">↗</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- AVISOS IMPORTANTES -->
+
+        <section class="avisos">
+            <div class="contenedor avisos-contenido">
+
+                <div class="avisos-texto">
+                    <span class="sobrelinea">Información para la comunidad</span>
+
+                    <h2>Información importante para nuestros vecinos</h2>
+
+                    <p>
+                        Revisa los avisos, comunicados e información municipal
+                        para mantenerte al tanto de las actividades, los servicios
+                        y las novedades de la comuna.
+                    </p>
+
+                    <a href="#noticias" class="enlace-texto">
+                        Revisar información →
+                    </a>
+                </div>
+
+                <div class="avisos-imagen"
+                    role="img"
+                    aria-label="Imagen representativa de Vicuña">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- NOTICIAS -->
+
+        <section class="noticias" id="noticias">
+            <div class="contenedor">
+
+                <div class="noticias-cabecera">
+                    <div class="encabezado-seccion">
+                        <span class="sobrelinea">Actualidad comunal</span>
+
+                        <h2 class="titulo-seccion">Noticias de Vicuña</h2>
+
+                        <p class="descripcion-seccion">
+                            Actividades, iniciativas y novedades de nuestra comuna.
+                        </p>
+                    </div>
+
+                    <a href="./noticias 2.html" class="enlace-texto">
+                 Ver todas las noticias →
+                </a>
+                </div>
+
+                <div class="noticias-grid">
+
+                    <article class="noticia">
+                        <div class="noticia-imagen">
+                            <img src="./imagen 3.jpeg"
+                                alt="Actividad en la comuna de Vicuña">
+                        </div>
+
+                        <span class="noticia-categoria">Comunidad</span>
+
+                        <h3>Actividades y encuentros de la comuna</h3>
+
+                        <p>
+                            Conoce las iniciativas y actividades que reúnen
+                            a los habitantes de Vicuña.
+                        </p>
+
+                        <a href="#noticias" class="enlace-texto">Leer más →</a>
+                    </article>
+
+                    <article class="noticia">
+                        <div class="noticia-imagen">
+                            <img src="./noticia.jpeg"
+                                alt="Paisaje y entorno de Vicuña">
+                        </div>
+
+                        <span class="noticia-categoria">Territorio</span>
+
+                        <h3>Un territorio con identidad propia</h3>
+
+                        <p>
+                            El paisaje, la cultura y las tradiciones forman
+                            parte de la identidad de nuestra comuna.
+                        </p>
+
+                        <a href="#territorio" class="enlace-texto">Leer más →</a>
+                    </article>
+
+                    <article class="noticia">
+                        <div class="noticia-imagen">
+                            <img src="./imagen 2.jpeg"
+                                alt="Vida y actividades de Vicuña">
+                        </div>
+
+                        <span class="noticia-categoria">Municipalidad</span>
+
+                        <h3>Información y servicios municipales</h3>
+
+                        <p>
+                            Revisa la información disponible y conoce
+                            el trabajo que se desarrolla en la comuna.
+                        </p>
+
+                        <a href="municipalidad.html" class="enlace-texto">Leer más →</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TURISMO Y TERRITORIO -->
+
+        <section class="territorio" id="territorio">
+            <div class="contenedor">
+                <div class="territorio-contenido">
+
+                    <span class="sobrelinea">Descubre nuestra comuna</span>
+
+                    <h2>Vicuña y la riqueza de su territorio</h2>
+
+                    <p>
+                        Entre cielos despejados, paisajes naturales y tradiciones
+                        locales, Vicuña conserva una identidad vinculada a su
+                        entorno y a las personas que lo habitan.
+                    </p>
+
+                    <!-- ENLACE CORREGIDO: ABRE explorar.html -->
+                    <a href="explorar.html" class="boton-borde">
+                        Explorar Vicuña →
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MUNICIPALIDAD -->
+
+        <section class="municipalidad" id="municipalidad">
+            <div class="contenedor municipalidad-grid">
+
+                <div class="encabezado-seccion">
+                    <span class="sobrelinea">Conoce nuestro municipio</span>
+
+                    <h2 class="titulo-seccion">
+                        Una municipalidad cercana a su comunidad
+                    </h2>
+
+                    <p class="descripcion-seccion">
+                        Información sobre la gestión municipal y los canales
+                        disponibles para la comunidad.
+                    </p>
+
+                    <br>
+
+                    <a href="municipalidad.html" class="enlace-texto">
+                        Conocer la municipalidad →
+                    </a>
+                </div>
+
+                <div class="municipalidad-texto">
+
+                    <p>
+                        La Municipalidad de Vicuña trabaja para responder a
+                        las necesidades de sus habitantes y contribuir al
+                        desarrollo de la comuna.
+                    </p>
+
+                    <p>
+                        A través de sus distintas áreas, pone a disposición
+                        información, servicios y canales de atención para
+                        facilitar la relación entre el municipio y la comunidad.
+                    </p>
+
+                    <div class="municipalidad-datos">
+
+                        <div class="dato">
+                            <h3>Municipalidad</h3>
+                            <p>Información institucional y organización municipal.</p>
+                        </div>
+
+                        <div class="dato">
+                            <h3>Servicios</h3>
+                            <p>Orientación sobre trámites y atención municipal.</p>
+                        </div>
+
+                        <div class="dato">
+                            <h3>Comunidad</h3>
+                            <p>Información de interés para los habitantes.</p>
+                        </div>
+
+                        <div class="dato">
+                            <h3>Contacto</h3>
+                            <p>Canales de comunicación con el municipio.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer class="pie" id="contacto">
+        <div class="contenedor">
+
+            <div class="pie-superior">
+
+                <div>
+                    <a href="index.html" class="marca">
+                        <span class="marca-texto">
+                            <span class="marca-principal">Vicuña</span>
+                            <span class="marca-secundaria">MUNICIPALIDAD</span>
+                        </span>
+                    </a>
+
+                    <p class="pie-descripcion">
+                        Información municipal, servicios y actualidad
+                        de la comuna de Vicuña.
+                    </p>
+                </div>
+
+                <nav class="pie-enlaces" aria-label="Enlaces del pie de página">
+                    <a href="municipalidad.html">Municipalidad</a>
+                    <a href="#servicios">Trámites y servicios</a>
+                    <a href="#noticias">Noticias</a>
+                    <a href="explorar.html">Turismo y territorio</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+
+            </div>
+
+            <div class="pie-inferior">
+                <span>Municipalidad de Vicuña</span>
+                <span>Información y servicios para la comunidad</span>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- MENÚ PARA CELULARES -->
+
+    <script>
+        const botonMenu = document.getElementById("botonMenu");
+        const menuPrincipal = document.getElementById("menuPrincipal");
+
+        botonMenu.addEventListener("click", function () {
+            const menuAbierto = menuPrincipal.classList.toggle("activo");
+
+            botonMenu.setAttribute("aria-expanded", menuAbierto);
+            botonMenu.textContent = menuAbierto ? "Cerrar ✕" : "Menú ☰";
+        });
+
+        const enlacesMenu = menuPrincipal.querySelectorAll("a");
+
+        enlacesMenu.forEach(function (enlace) {
+            enlace.addEventListener("click", function () {
+                menuPrincipal.classList.remove("activo");
+                botonMenu.setAttribute("aria-expanded", "false");
+                botonMenu.textContent = "Menú ☰";
+            });
+        });
+    </script>
+
+</body>
+</html>

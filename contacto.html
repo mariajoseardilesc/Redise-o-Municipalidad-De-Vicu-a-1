@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | Municipalidad de Vicuña</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --fondo: #F6F1E8;
+    --fondo-claro: #FBF8F2;
+    --beige: #EAE0D0;
+    --arena: #D8C7AE;
+    --cafe: #514232;
+    --cafe-oscuro: #3D3227;
+    --cafe-medio: #76634E;
+    --texto: #40382F;
+    --secundario: #766D62;
+    --linea: #D9CEBE;
+    --blanco: #FFFFFF;
+    --ancho: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--blanco);
+    color: var(--cafe);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contenedor {
+    width: min(var(--ancho), calc(100% - 64px));
+    margin: auto;
+}
+
+/* CABECERA Y MENÚ */
+
+header {
+    background: var(--fondo-claro);
+}
+
+.cabecera {
+    width: min(1320px, 92%);
+    min-height: 88px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--cafe-oscuro);
+    flex-shrink: 0;
+}
+
+.logo-marca {
+    width: 43px;
+    height: 37px;
+    color: #8B7058;
+}
+
+.logo-marca svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.logo-texto strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.logo-texto span {
+    display: block;
+    margin-top: 6px;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    color: var(--cafe-medio);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    min-width: 0;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 27px;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color .2s;
+}
+
+.menu a:hover,
+.menu a.activo {
+    color: #8B7058;
+}
+
+.menu a.acceso {
+    background: #A7C1D6;
+    padding: 13px 17px;
+    border-radius: 2px;
+    color: #3E2F27;
+}
+
+.menu a.acceso:hover {
+    background: #A7C1D6;
+    color: #3E2F27;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+main {
+    padding: 54px 0 88px;
+}
+
+.migas {
+    font-size: 11px;
+    color: var(--secundario);
+    margin-bottom: 30px;
+}
+
+.migas a:hover {
+    text-decoration: underline;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--linea);
+}
+
+.etiqueta {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4.4vw, 52px);
+    line-height: 1.15;
+    font-weight: 400;
+    color: var(--cafe-oscuro);
+    margin-top: 12px;
+    letter-spacing: -.6px;
+}
+
+.intro p {
+    max-width: 620px;
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--secundario);
+}
+
+.contador {
+    padding: 13px 17px;
+    background: var(--beige);
+    color: var(--cafe);
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+/* INFORMACIÓN DE CONTACTO */
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 28px;
+    margin-top: 38px;
+    align-items: stretch;
+}
+
+.contacto-panel {
+    border: 1px solid var(--linea);
+    padding: 30px;
+    background: var(--fondo-claro);
+}
+
+.contacto-panel h2,
+.formulario-contacto h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 400;
+    color: var(--cafe-oscuro);
+}
+
+.contacto-panel h2 {
+    margin-bottom: 10px;
+}
+
+.contacto-panel > p {
+    font-size: 12px;
+    color: var(--secundario);
+    line-height: 1.85;
+    margin-bottom: 24px;
+}
+
+.dato-contacto {
+    display: flex;
+    gap: 15px;
+    padding: 18px 0;
+    border-top: 1px solid var(--linea);
+    align-items: flex-start;
+}
+
+.dato-icono {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    display: grid;
+    place-items: center;
+    background: var(--beige);
+    color: var(--cafe);
+    font-size: 17px;
+}
+
+.dato-contacto small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+    margin-bottom: 3px;
+}
+
+.dato-contacto strong,
+.dato-contacto a {
+    font-size: 13px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.dato-contacto a:hover {
+    text-decoration: underline;
+}
+
+/* FORMULARIO */
+
+.formulario-contacto {
+    background: #fff;
+    border: 1px solid var(--linea);
+    padding: clamp(24px, 4vw, 40px);
+}
+
+.formulario-contacto h2 {
+    margin-bottom: 8px;
+}
+
+.formulario-contacto > p {
+    font-size: 12px;
+    color: var(--secundario);
+    margin-bottom: 24px;
+}
+
+.campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.campo.completo {
+    grid-column: 1 / -1;
+}
+
+.campo label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--cafe);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    border: 1px solid var(--linea);
+    background: var(--fondo-claro);
+    padding: 12px 13px;
+    font: inherit;
+    font-size: 12px;
+    color: var(--texto);
+    border-radius: 0;
+    outline: none;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: var(--cafe-medio);
+}
+
+.campo textarea {
+    min-height: 135px;
+    resize: vertical;
+}
+
+.boton-enviar {
+    display: inline-block;
+    margin-top: 20px;
+    border: 0;
+    background: var(--cafe-oscuro);
+    color: white;
+    padding: 14px 20px;
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.boton-enviar:hover {
+    background: var(--cafe-medio);
+}
+
+.aviso-formulario {
+    margin-top: 12px;
+    font-size: 10px;
+    color: var(--secundario);
+    line-height: 1.7;
+}
+
+/* ATENCIÓN PRESENCIAL */
+
+.horario {
+    margin-top: 28px;
+    padding: 24px 28px;
+    background: var(--beige);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.horario h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--cafe-oscuro);
+}
+
+.horario p {
+    font-size: 12px;
+    color: var(--cafe);
+    margin-top: 4px;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    background: var(--cafe-oscuro);
+    color: var(--fondo);
+    padding: 28px 0;
+}
+
+.pie {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.pie .logo-texto strong {
+    color: var(--fondo-claro);
+    font-size: 23px;
+}
+
+.pie .logo-texto span {
+    color: #D2BFA7;
+}
+
+.pie .logo-marca {
+    color: #D2BFA7;
+}
+
+.derechos {
+    text-align: right;
+    font-size: 10px;
+    color: #D8CBBB;
+}
+
+.derechos div {
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+    margin-top: 6px;
+}
+
+.derechos a:hover {
+    text-decoration: underline;
+}
+
+/* ADAPTACIÓN A PANTALLAS */
+
+@media (max-width: 1000px) {
+    .cabecera {
+        gap: 20px;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .menu a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 850px) {
+    .contenedor {
+        width: calc(100% - 40px);
+    }
+
+    .cabecera {
+        width: calc(100% - 40px);
+        min-height: 82px;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 18px 0;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .menu {
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .horario {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 560px) {
+    .contenedor {
+        width: calc(100% - 30px);
+    }
+
+    .cabecera {
+        width: calc(100% - 30px);
+    }
+
+    .logo-marca {
+        width: 35px;
+        height: 34px;
+    }
+
+    .logo-texto strong {
+        font-size: 22px;
+    }
+
+    .logo-texto span {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .menu {
+        gap: 16px;
+    }
+
+    .menu a {
+        white-space: nowrap;
+    }
+
+    main {
+        padding: 34px 0 55px;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .contador {
+        justify-self: start;
+    }
+
+    .campos {
+        grid-template-columns: 1fr;
+    }
+
+    .campo.completo {
+        grid-column: auto;
+    }
+
+    .contacto-panel {
+        padding: 23px;
+    }
+
+    .pie {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .derechos {
+        text-align: left;
+    }
+
+    .derechos div {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="cabecera">
+        <a class="logo" href="index.html" aria-label="Municipalidad de Vicuña, inicio">
+            <span class="logo-marca" aria-hidden="true">
+                <svg viewBox="0 0 56 44">
+                    <path d="M3 34 17 13 26 25 35 7 53 34"/>
+                    <path d="M12 34h32M21 34l7-9 7 9M7 39h42"/>
+                </svg>
+            </span>
+            <span class="logo-texto">
+                <strong>Vicuña</strong>
+                <span>MUNICIPALIDAD</span>
+            </span>
+        </a>
+
+        <nav aria-label="Navegación principal">
+            <ul class="menu">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="municipalidad.html#autoridades">Municipalidad</a></li>
+                <li><a href="educacion.html">Educación Y Salud</a></li>
+                <li><a href="index.html#servicios">Trámites y servicios</a></li>
+                <li><a href="index.html#noticias">Noticias</a></li>
+                <li><a href="index.html#territorio">Turismo y territorio</a></li>
+                <li><a class="activo" href="contacto.html">Contacto</a></li>
+                <li><a class="acceso" href="index.html#servicios">Trámites en línea ↗</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="inicio">
+    <div class="contenedor">
+
+        <div class="migas">
+            <a href="index.html">Inicio</a> &nbsp; / &nbsp; Contacto
+        </div>
+
+        <section class="intro" id="contacto">
+            <div>
+                <span class="etiqueta">Municipalidad de Vicuña</span>
+                <h1>Estamos para ayudarte</h1>
+                <p>
+                    ¿Tienes una consulta, necesitas orientación o quieres hacer
+                    llegar una solicitud? Encuentra aquí los canales de contacto
+                    de la municipalidad.
+                </p>
+            </div>
+
+            <div class="contador">Atención a la comunidad</div>
+        </section>
+
+        <section class="contacto-grid" aria-label="Información y formulario de contacto">
+
+            <div class="contacto-panel">
+                <span class="etiqueta">Canales de atención</span>
+                <h2>Contacta con nosotros</h2>
+                <p>
+                    Comunícate con la municipalidad a través de los siguientes
+                    medios o acércate a nuestras oficinas.
+                </p>
+
+                <div class="dato-contacto">
+                    <span class="dato-icono" aria-hidden="true">✉</span>
+                    <div>
+                        <small>Correo electrónico</small>
+                        <a href="mailto:alcaldia@munivicuna.cl">alcaldia@munivicuna.cl</a>
+                    </div>
+                </div>
+
+                <div class="dato-contacto">
+                    <span class="dato-icono" aria-hidden="true">☎</span>
+                    <div>
+                        <small>Teléfono central</small>
+                        <a href="tel:+56512670300">+56 51 267 0300</a>
+                    </div>
+                </div>
+
+                <div class="dato-contacto">
+                    <span class="dato-icono" aria-hidden="true">⌖</span>
+                    <div>
+                        <small>Dirección</small>
+                        <strong>San Martín 275, Vicuña</strong>
+                        <br>
+                        <span style="font-size:12px;color:var(--secundario)">
+                            Región de Coquimbo, Chile
+                        </span>
+                    </div>
+                </div>
+
+                <div class="dato-contacto">
+                    <span class="dato-icono" aria-hidden="true">◷</span>
+                    <div>
+                        <small>Atención presencial</small>
+                        <strong>Consulta los horarios de cada oficina</strong>
+                        <br>
+                        <span style="font-size:12px;color:var(--secundario)">
+                            Los horarios pueden variar según el servicio.
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="formulario-contacto" id="formulario-contacto">
+                <span class="etiqueta">Escríbenos</span>
+                <h2>Envíanos tu consulta</h2>
+                <p>
+                    Completa los datos y se abrirá tu aplicación de correo
+                    para enviar el mensaje.
+                </p>
+
+                <div class="campos">
+                    <div class="campo">
+                        <label for="nombre">Nombre completo *</label>
+                        <input
+                            id="nombre"
+                            name="nombre"
+                            autocomplete="name"
+                            required
+                            placeholder="Tu nombre"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo electrónico *</label>
+                        <input
+                            id="correo"
+                            name="correo"
+                            type="email"
+                            autocomplete="email"
+                            required
+                            placeholder="nombre@correo.cl"
+                        >
+                    </div>
+
+                    <div class="campo completo">
+                        <label for="tema">Motivo de contacto *</label>
+                        <select id="tema" name="tema" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option>Consulta general</option>
+                            <option>Trámites y servicios</option>
+                            <option>Solicitud o reclamo</option>
+                            <option>Información municipal</option>
+                            <option>Otro motivo</option>
+                        </select>
+                    </div>
+
+                    <div class="campo completo">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea
+                            id="mensaje"
+                            name="mensaje"
+                            required
+                            placeholder="Escribe aquí tu consulta o solicitud..."
+                        ></textarea>
+                    </div>
+                </div>
+
+                <button class="boton-enviar" type="submit">
+                    Preparar correo de contacto ↗
+                </button>
+
+                <p class="aviso-formulario">
+                    Este formulario no envía datos directamente desde el sitio.
+                    Al continuar, se abrirá tu aplicación de correo con el mensaje
+                    preparado para alcaldia@munivicuna.cl.
+                </p>
+            </form>
+        </section>
+
+        <section class="horario" aria-label="Información para la atención">
+            <div>
+                <h2>¿Necesitas atención presencial?</h2>
+                <p>Visítanos en San Martín 275, Vicuña, Región de Coquimbo.</p>
+            </div>
+
+            <a
+                class="boton-enviar"
+                style="margin:0"
+                href="https://www.municipalidadvicuna.cl/"
+                target="_blank"
+                rel="noopener"
+            >
+                Sitio municipal oficial ↗
+            </a>
+        </section>
+
+    </div>
+</main>
+
+<footer>
+    <div class="contenedor pie">
+        <a class="logo" href="index.html" aria-label="Volver al inicio">
+            <span class="logo-marca" aria-hidden="true">
+                <svg viewBox="0 0 56 44">
+                    <path d="M3 34 17 13 26 25 35 7 53 34"/>
+                    <path d="M12 34h32M21 34l7-9 7 9M7 39h42"/>
+                </svg>
+            </span>
+
+            <span class="logo-texto">
+                <strong>Vicuña</strong>
+                <span>MUNICIPALIDAD</span>
+            </span>
+        </a>
+
+        <div class="derechos">
+            © Municipalidad de Vicuña.
+            <div>
+                <a href="index.html">Inicio</a>
+                <a href="municipalidad.html#autoridades">Autoridades</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+document
+    .getElementById('formulario-contacto')
+    .addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const datos = new FormData(this);
+
+        const asunto = 'Contacto municipal: ' + datos.get('tema');
+
+        const cuerpo =
+            'Nombre: ' + datos.get('nombre') +
+            '\nCorreo: ' + datos.get('correo') +
+            '\nMotivo: ' + datos.get('tema') +
+            '\n\nMensaje:\n' + datos.get('mensaje');
+
+        window.location.href =
+            'mailto:alcaldia@munivicuna.cl?subject=' +
+            encodeURIComponent(asunto) +
+            '&body=' +
+            encodeURIComponent(cuerpo);
+    });
+</script>
+
+</body>
+</html>
+```

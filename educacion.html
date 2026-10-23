@@ -1,0 +1,919 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Educación y Salud | Municipalidad de Vicuña</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --fondo: #f7f3ec;
+            --fondo-claro: #fcfaf6;
+            --cafe: #594536;
+            --cafe-oscuro: #3f3025;
+            --cafe-suave: #8a7561;
+            --beige: #e8dfd1;
+            --borde: #ded3c4;
+            --texto: #40372f;
+            --blanco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =====================================
+           ENCABEZADO Y MENÚ PRINCIPAL
+        ===================================== */
+
+        .encabezado {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+            background: var(--fondo-claro);
+            border-bottom: 1px solid var(--borde);
+        }
+
+        .barra-navegacion {
+            width: min(1320px, 92%);
+            min-height: 86px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            position: relative;
+        }
+
+        .marca {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--cafe-oscuro);
+            flex-shrink: 0;
+        }
+
+        .marca-simbolo {
+            width: 43px;
+            height: 37px;
+            color: #8B7058;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .marca-simbolo svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .marca-texto {
+            display: block;
+            line-height: normal;
+        }
+
+        .marca-principal {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 500;
+            line-height: 1;
+            color: var(--cafe-oscuro);
+        }
+
+        .marca-secundaria {
+            display: block;
+            margin-top: 6px;
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #76634E;
+        }
+
+        .barra-navegacion nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            list-style: none;
+        }
+
+        .menu a {
+            display: block;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--texto);
+            white-space: nowrap;
+            transition: color 0.2s ease;
+        }
+
+        .menu a:hover,
+        .menu a.activo {
+            color: var(--cafe);
+        }
+
+        .menu a.boton-tramites {
+            padding: 12px 16px;
+            background: var(--beige);
+            color: var(--cafe-oscuro);
+            border: 1px solid var(--beige);
+            transition: background 0.2s ease;
+        }
+
+        .menu a.boton-tramites:hover {
+            background: #d9cbb8;
+        }
+
+        .menu-movil {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--borde);
+            padding: 9px 12px;
+            color: var(--cafe-oscuro);
+            font-family: inherit;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        /* =====================================
+           CONTENIDO PRINCIPAL
+        ===================================== */
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 6%;
+        }
+
+        .encabezado-pagina {
+            padding: 76px 0 45px;
+            border-bottom: 1px solid var(--borde);
+        }
+
+        .etiqueta {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--cafe-suave);
+            margin-bottom: 17px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cafe-oscuro);
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(38px, 5vw, 58px);
+            max-width: 750px;
+            margin-bottom: 20px;
+        }
+
+        .bajada {
+            max-width: 720px;
+            font-size: 15px;
+            color: #716357;
+            line-height: 1.9;
+        }
+
+        /* =====================================
+           CITAS ROTATIVAS DE GABRIELA MISTRAL
+        ===================================== */
+
+        .citas-mistral {
+            margin: 30px 0 0;
+            padding: 28px 32px;
+            background: var(--beige);
+            border-left: 3px solid var(--cafe-suave);
+            text-align: center;
+        }
+
+        .citas-mistral .cita-etiqueta {
+            margin-bottom: 12px;
+            color: var(--cafe-suave);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .citas-mistral blockquote {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--cafe-oscuro);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(20px, 2.5vw, 27px);
+            line-height: 1.5;
+            transition: opacity 0.35s ease;
+        }
+
+        .citas-mistral .cita-autora {
+            display: block;
+            margin-top: 14px;
+            color: var(--cafe-suave);
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* =====================================
+           SECCIÓN EDUCACIÓN
+        ===================================== */
+
+        .seccion {
+            padding: 58px 0;
+            border-bottom: 1px solid var(--borde);
+        }
+
+        .titulo-seccion {
+            font-size: 34px;
+            margin-bottom: 24px;
+        }
+
+        .presentacion-educacion {
+            display: block;
+            max-width: 850px;
+        }
+
+        .texto-educacion p,
+        .texto-salud p {
+            font-size: 14px;
+            line-height: 2;
+            color: #62564b;
+            margin-bottom: 18px;
+        }
+
+        .subtitulo {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            color: var(--cafe);
+            margin: 30px 0 12px;
+        }
+
+        /* =====================================
+           BLOQUE GABRIELA MISTRAL
+        ===================================== */
+
+        .bloque-gabriela {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            align-items: center;
+            gap: 50px;
+            margin-top: 38px;
+            padding: 30px;
+            background-color: var(--fondo-claro);
+            border: 1px solid var(--borde);
+        }
+
+        .imagen-gabriela {
+            width: 100%;
+        }
+
+        .imagen-gabriela img {
+            display: block;
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .texto-gabriela h3 {
+            font-size: 29px;
+            margin-bottom: 18px;
+        }
+
+        .texto-gabriela p {
+            font-size: 14px;
+            line-height: 2;
+            color: #62564b;
+            margin-bottom: 15px;
+        }
+
+        /* =====================================
+           SECCIÓN SALUD
+        ===================================== */
+
+        .seccion-salud {
+            padding: 58px 0 70px;
+        }
+
+        .contenido-salud {
+            max-width: 850px;
+        }
+
+        .lista-servicios {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .servicio {
+            padding: 24px;
+            background-color: var(--fondo-claro);
+            border: 1px solid var(--borde);
+        }
+
+        .servicio h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .servicio p {
+            font-size: 13px;
+            line-height: 1.9;
+            color: #716357;
+        }
+
+        /* =====================================
+           PIE DE PÁGINA
+           MISMO DISEÑO DE LA REFERENCIA
+        ===================================== */
+
+        .pie {
+            padding: 45px 0 25px;
+            background-color: var(--cafe-oscuro);
+            color: white;
+        }
+
+        .pie .contenedor {
+            width: min(1200px, 88%);
+            margin: 0 auto;
+        }
+
+        .pie-superior {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .pie .marca {
+            color: white;
+        }
+
+        .pie .marca-simbolo {
+            color: #d3c6b4;
+        }
+
+        .pie .marca-principal {
+            color: white;
+        }
+
+        .pie .marca-secundaria {
+            color: #d3c6b4;
+        }
+
+        .pie-descripcion {
+            max-width: 340px;
+            margin-top: 15px;
+            color: #d7cec2;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .pie-enlaces {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .pie-enlaces a {
+            color: #eee5da;
+            font-size: 12px;
+            transition: color 0.2s ease;
+        }
+
+        .pie-enlaces a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .pie-inferior {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 22px;
+            color: #c9beb0;
+            font-size: 11px;
+        }
+
+        /* =====================================
+           DISEÑO RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 1100px) {
+            .barra-navegacion {
+                gap: 22px;
+            }
+
+            .menu {
+                gap: 16px;
+            }
+
+            .menu a {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .barra-navegacion {
+                width: calc(100% - 40px);
+                min-height: 82px;
+                flex-wrap: wrap;
+                gap: 16px;
+                padding: 18px 0;
+            }
+
+            .menu-movil {
+                display: block;
+            }
+
+            .barra-navegacion nav {
+                flex: 1 0 100%;
+            }
+
+            .menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                padding: 15px 20px;
+                background: var(--fondo-claro);
+                border-bottom: 1px solid var(--borde);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .menu.activo {
+                display: flex;
+            }
+
+            .menu a {
+                padding: 13px 0;
+                border-bottom: 1px solid var(--borde);
+                font-size: 12px;
+            }
+
+            .menu a.boton-tramites {
+                margin-top: 12px;
+                padding: 13px;
+                text-align: center;
+            }
+
+            .pie-superior {
+                flex-direction: column;
+                gap: 28px;
+            }
+
+            .pie-enlaces {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .pie-inferior {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .barra-navegacion {
+                width: calc(100% - 30px);
+                gap: 12px;
+            }
+
+            .marca-principal {
+                font-size: 22px;
+            }
+
+            .marca-simbolo {
+                width: 35px;
+                height: 34px;
+            }
+
+            .marca-secundaria {
+                font-size: 8px;
+                letter-spacing: 1.5px;
+            }
+
+            main {
+                padding: 0 5%;
+            }
+
+            .encabezado-pagina {
+                padding: 50px 0 35px;
+            }
+
+            h1 {
+                font-size: 39px;
+            }
+
+            .titulo-seccion {
+                font-size: 29px;
+            }
+
+            .bloque-gabriela {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 20px;
+            }
+
+            .imagen-gabriela img {
+                height: 300px;
+            }
+
+            .lista-servicios {
+                grid-template-columns: 1fr;
+            }
+
+            .seccion,
+            .seccion-salud {
+                padding: 42px 0;
+            }
+
+            .citas-mistral {
+                padding: 24px 18px;
+            }
+
+            .pie .contenedor {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================
+         MENÚ SUPERIOR
+    ===================================== -->
+
+    <header class="encabezado">
+        <div class="barra-navegacion">
+
+            <a href="index.html" class="marca" aria-label="Municipalidad de Vicuña, inicio">
+
+                <span class="marca-simbolo" aria-hidden="true">
+                    <svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 34 17 13 26 25 35 7 53 34" />
+                        <path d="M12 34h32M21 34l7-9 7 9M7 39h42" />
+                    </svg>
+                </span>
+
+                <span class="marca-texto">
+                    <span class="marca-principal">Vicuña</span>
+                    <span class="marca-secundaria">MUNICIPALIDAD</span>
+                </span>
+
+            </a>
+
+            <button
+                class="menu-movil"
+                id="botonMenu"
+                aria-expanded="false"
+                aria-controls="menuPrincipal">
+                Menú ☰
+            </button>
+
+            <nav aria-label="Navegación principal">
+                <ul class="menu" id="menuPrincipal">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="municipalidad.html#autoridades">Municipalidad</a></li>
+                    <li><a href="tramites.html">Trámites y servicios</a></li>
+                    <li><a href="index.html#noticias">Noticias</a></li>
+                    <li><a href="turismo.html">Turismo y territorio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li>
+                        <a href="tramites-en-linea.html" class="boton-tramites">
+                            Trámites en línea ↗
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ENCABEZADO DE LA PÁGINA -->
+
+        <section class="encabezado-pagina">
+            <p class="etiqueta">Servicios para la comunidad</p>
+
+            <h1>Educación y Salud</h1>
+
+            <p class="bajada">
+                Conoce los servicios, espacios y recursos que contribuyen al
+                bienestar y al desarrollo de la comunidad de Vicuña.
+            </p>
+        </section>
+
+        <!-- CITAS ROTATIVAS DE GABRIELA MISTRAL -->
+
+        <section class="citas-mistral" aria-label="Citas de Gabriela Mistral sobre educación">
+
+            <p class="cita-etiqueta">El pensamiento de Gabriela Mistral</p>
+
+            <blockquote id="citaMistral" aria-live="polite">
+                “Enseñar siempre: en el patio y en la calle como en la sala de clase. Enseñar con la actitud, el gesto y la palabra.”
+            </blockquote>
+
+            <span class="cita-autora">Gabriela Mistral</span>
+
+        </section>
+
+        <!-- EDUCACIÓN -->
+
+        <section class="seccion" id="educacion">
+
+            <p class="etiqueta">01 / Educación</p>
+
+            <h2 class="titulo-seccion">Educación en Vicuña</h2>
+
+            <div class="presentacion-educacion">
+
+                <div class="texto-educacion">
+
+                    <p>
+                        La educación es fundamental para el desarrollo de la
+                        comunidad y para generar oportunidades para las
+                        personas a lo largo de sus vidas. En Vicuña, los
+                        espacios educativos forman parte importante de la
+                        vida de sus habitantes y del crecimiento del territorio.
+                    </p>
+
+                    <p>
+                        La educación permite fortalecer los vínculos con la
+                        comunidad, promover el aprendizaje y reconocer la
+                        identidad cultural y social del Valle de Elqui.
+                    </p>
+
+                    <h3 class="subtitulo">Una educación vinculada al territorio</h3>
+
+                    <p>
+                        Los establecimientos educacionales cumplen un papel
+                        importante en la formación de niñas, niños y jóvenes,
+                        además de contribuir al encuentro y la participación
+                        de las familias de la comuna.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- GABRIELA MISTRAL -->
+
+            <div class="bloque-gabriela">
+
+                <div class="imagen-gabriela">
+                    <img
+                        src="gabriela.jpg"
+                        alt="Gabriela Mistral"
+                        loading="lazy">
+                </div>
+
+                <div class="texto-gabriela">
+
+                    <p class="etiqueta">Identidad y cultura</p>
+
+                    <h3>Gabriela Mistral</h3>
+
+                    <p>
+                        Vicuña es el lugar de nacimiento de Gabriela Mistral,
+                        poeta, educadora y primera persona latinoamericana en
+                        recibir el Premio Nobel de Literatura.
+                    </p>
+
+                    <p>
+                        Su legado forma parte de la identidad cultural de la
+                        comuna y mantiene una estrecha relación con la
+                        educación, la literatura y el territorio del Valle
+                        de Elqui.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SALUD -->
+
+        <section class="seccion-salud" id="salud">
+
+            <p class="etiqueta">02 / Salud</p>
+
+            <h2 class="titulo-seccion">Salud para la comunidad</h2>
+
+            <div class="contenido-salud">
+
+                <p class="texto-salud">
+                    El acceso a la salud es esencial para el bienestar de las
+                    personas. Los servicios de atención de la comuna buscan
+                    responder a las necesidades de sus habitantes y contribuir
+                    al cuidado de la comunidad.
+                </p>
+
+                <p class="texto-salud">
+                    La atención primaria, la prevención y la promoción de
+                    hábitos saludables son parte importante del cuidado
+                    integral de las personas y sus familias.
+                </p>
+
+            </div>
+
+            <div class="lista-servicios">
+
+                <article class="servicio">
+                    <h3>Atención primaria</h3>
+
+                    <p>
+                        Atención de salud orientada a las necesidades de las
+                        personas y sus familias, con énfasis en la prevención
+                        y el cuidado.
+                    </p>
+                </article>
+
+                <article class="servicio">
+                    <h3>Prevención y bienestar</h3>
+
+                    <p>
+                        Acciones destinadas a promover hábitos saludables,
+                        prevenir enfermedades y fortalecer el bienestar
+                        de la comunidad.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =====================================
+         PIE DE PÁGINA
+         MISMO ESTILO DEL CÓDIGO DE REFERENCIA
+    ===================================== -->
+
+    <footer class="pie">
+        <div class="contenedor">
+
+            <div class="pie-superior">
+
+                <div>
+
+                    <a href="index.html" class="marca" aria-label="Municipalidad de Vicuña, inicio">
+
+                        <span class="marca-simbolo" aria-hidden="true">
+                            <svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 34 17 13 26 25 35 7 53 34" />
+                                <path d="M12 34h32M21 34l7-9 7 9M7 39h42" />
+                            </svg>
+                        </span>
+
+                        <span class="marca-texto">
+                            <span class="marca-principal">Vicuña</span>
+                            <span class="marca-secundaria">MUNICIPALIDAD</span>
+                        </span>
+
+                    </a>
+
+                    <p class="pie-descripcion">
+                        Información municipal, servicios y actualidad
+                        de la comuna de Vicuña.
+                    </p>
+
+                </div>
+
+                <nav class="pie-enlaces" aria-label="Enlaces del pie de página">
+                    <a href="municipalidad.html">Municipalidad</a>
+                    <a href="tramites.html">Trámites y servicios</a>
+                    <a href="index.html#noticias">Noticias</a>
+                    <a href="turismo.html">Turismo y territorio</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="#educacion">Educación</a>
+                    <a href="#salud">Salud</a>
+                </nav>
+
+            </div>
+
+            <div class="pie-inferior">
+                <span>Municipalidad de Vicuña</span>
+                <span>Información y servicios para la comunidad</span>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- =====================================
+         FUNCIONES DEL MENÚ Y LAS CITAS
+    ===================================== -->
+
+    <script>
+        const botonMenu = document.getElementById("botonMenu");
+        const menuPrincipal = document.getElementById("menuPrincipal");
+
+        // Abrir y cerrar el menú en dispositivos móviles
+
+        botonMenu.addEventListener("click", function () {
+            const menuAbierto = menuPrincipal.classList.toggle("activo");
+
+            botonMenu.setAttribute("aria-expanded", menuAbierto);
+            botonMenu.textContent = menuAbierto ? "Cerrar ✕" : "Menú ☰";
+        });
+
+        // Citas de Gabriela Mistral que cambian automáticamente
+
+        const citasMistral = [
+            '“Enseñar siempre: en el patio y en la calle como en la sala de clase. Enseñar con la actitud, el gesto y la palabra.”',
+            '“Si no realizamos la igualdad y la cultura dentro de la escuela, ¿dónde podrán exigirse estas cosas?”',
+            '“Amenizar la enseñanza con la hermosa palabra, con la anécdota oportuna, y la relación de cada conocimiento con la vida.”',
+            '“Todo esfuerzo que no es sostenido se pierde.”'
+        ];
+
+        let indiceCitaMistral = 0;
+        const elementoCitaMistral = document.getElementById("citaMistral");
+
+        setInterval(function () {
+            elementoCitaMistral.style.opacity = "0";
+
+            setTimeout(function () {
+                indiceCitaMistral =
+                    (indiceCitaMistral + 1) % citasMistral.length;
+
+                elementoCitaMistral.textContent =
+                    citasMistral[indiceCitaMistral];
+
+                elementoCitaMistral.style.opacity = "1";
+            }, 350);
+
+        }, 5000);
+
+        // Cerrar el menú móvil al seleccionar un enlace
+
+        menuPrincipal.querySelectorAll("a").forEach(function (enlace) {
+            enlace.addEventListener("click", function () {
+                menuPrincipal.classList.remove("activo");
+                botonMenu.setAttribute("aria-expanded", "false");
+                botonMenu.textContent = "Menú ☰";
+            });
+        });
+    </script>
+
+</body>
+</html>

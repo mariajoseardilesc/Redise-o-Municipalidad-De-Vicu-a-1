@@ -1,0 +1,1135 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Identidad visual | Municipalidad de Vicuña</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --azul: #A7C1D6;
+    --arena: #EDE4D6;
+    --tierra: #8B7058;
+    --cafe: #3E2F27;
+    --blanco: #FAF9F6;
+    --gris: #77716A;
+    --linea: #DED7CC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--blanco);
+    color: var(--cafe);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contenedor {
+    width: min(1120px, 88%);
+    margin: auto;
+}
+
+/* NAVEGACIÓN */
+
+header {
+    height: 82px;
+    border-bottom: 1px solid var(--linea);
+    display: flex;
+    align-items: center;
+    background: var(--blanco);
+}
+
+.nav {
+    width: min(1200px, 90%);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.marca-icono {
+    width: 38px;
+    height: 34px;
+    color: var(--tierra);
+}
+
+.marca-icono svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.marca-texto strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.marca-texto span {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.nav-etiqueta {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--gris);
+}
+
+/* PORTADA */
+
+.portada {
+    padding: 100px 0 95px;
+    background: var(--arena);
+}
+
+.portada-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.etiqueta {
+    color: var(--tierra);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: clamp(43px, 5.2vw, 68px);
+    line-height: 1.1;
+    letter-spacing: -1.3px;
+    margin-bottom: 25px;
+}
+
+.introduccion {
+    color: #62584E;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 510px;
+}
+
+.numero-portada {
+    display: block;
+    margin-top: 35px;
+    color: var(--tierra);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.portada-imagen {
+    height: 430px;
+    position: relative;
+}
+
+.portada-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagen-texto {
+    position: absolute;
+    left: -22px;
+    bottom: 25px;
+    background: var(--blanco);
+    padding: 16px 20px;
+    font-size: 10px;
+    letter-spacing: .5px;
+}
+
+/* INTRODUCCIÓN */
+
+.intro {
+    padding: 100px 0;
+}
+
+.encabezado-seccion {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.titulo-lateral {
+    color: var(--tierra);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.encabezado-seccion h2 {
+    font-size: clamp(32px, 3.5vw, 44px);
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.encabezado-seccion p {
+    color: var(--gris);
+    max-width: 650px;
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+.frase {
+    border-left: 2px solid var(--tierra);
+    padding: 14px 0 14px 22px;
+    margin-top: 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* PALETA */
+
+.paleta {
+    background: #F2EEE7;
+    padding: 90px 0 100px;
+}
+
+.seccion-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 38px;
+}
+
+.seccion-titulo h2 {
+    font-size: clamp(32px, 3.5vw, 44px);
+    line-height: 1.2;
+}
+
+.seccion-titulo p {
+    color: var(--gris);
+    font-size: 11px;
+    max-width: 300px;
+}
+
+.colores-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 13px;
+}
+
+.color-card {
+    background: var(--blanco);
+    min-width: 0;
+}
+
+.muestra-color {
+    height: 190px;
+    position: relative;
+}
+
+.muestra-color span {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(250,249,246,.88);
+    padding: 4px 7px;
+    font-size: 9px;
+    letter-spacing: .5px;
+}
+
+.color-info {
+    padding: 18px 15px 21px;
+}
+
+.color-info h3 {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.color-info code {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    color: var(--tierra);
+    font-weight: 700;
+}
+
+.color-info p {
+    font-size: 11px;
+    color: var(--gris);
+    line-height: 1.7;
+    margin-top: 12px;
+}
+
+/* RELACIÓN CON EL TERRITORIO */
+
+.territorio {
+    padding: 100px 0;
+}
+
+.territorio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.territorio-imagenes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: start;
+}
+
+.territorio-imagenes img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.territorio-imagenes img:last-child {
+    margin-top: 38px;
+    height: 300px;
+}
+
+.territorio-texto h2 {
+    font-size: clamp(32px, 3.5vw, 43px);
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.territorio-texto > p {
+    color: var(--gris);
+    font-size: 13px;
+    line-height: 1.95;
+    margin-bottom: 17px;
+}
+
+.lista-territorio {
+    list-style: none;
+    margin-top: 25px;
+    border-top: 1px solid var(--linea);
+}
+
+.lista-territorio li {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--linea);
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 12px;
+}
+
+.lista-territorio li span {
+    color: var(--tierra);
+}
+
+/* TIPOGRAFÍA */
+
+.tipografia {
+    padding: 95px 0;
+    background: var(--cafe);
+    color: var(--blanco);
+}
+
+.tipografia .etiqueta {
+    color: var(--azul);
+}
+
+.tipografia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+}
+
+.tipografia h2 {
+    font-size: 43px;
+    margin-bottom: 20px;
+}
+
+.tipografia-intro {
+    color: #D0C5B8;
+    font-size: 12px;
+    line-height: 1.9;
+    max-width: 400px;
+}
+
+.ejemplo-tipo {
+    padding: 28px 0;
+    border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.ejemplo-tipo:last-child {
+    border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.tipo-etiqueta {
+    color: var(--azul);
+    font-size: 9px;
+    letter-spacing: 1.7px;
+    margin-bottom: 15px;
+}
+
+.ejemplo-serif {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(29px, 4vw, 42px);
+    line-height: 1.2;
+}
+
+.ejemplo-sans {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.ejemplo-descripcion {
+    color: #CFC3B6;
+    font-size: 11px;
+    margin-top: 12px;
+}
+
+/* COMPONENTES */
+
+.componentes {
+    padding: 100px 0;
+}
+
+.componentes-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 70px;
+}
+
+.componentes h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.componentes-intro {
+    color: var(--gris);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.demo-componentes {
+    border: 1px solid var(--linea);
+    padding: 30px;
+    background: white;
+}
+
+.demo-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--linea);
+    font-size: 10px;
+}
+
+.demo-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+}
+
+.demo-nav span:last-child {
+    color: var(--tierra);
+}
+
+.demo-tarjetas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.demo-tarjeta {
+    background: var(--arena);
+    padding: 19px;
+    min-height: 115px;
+}
+
+.demo-tarjeta small {
+    color: var(--tierra);
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.demo-tarjeta h3 {
+    font-size: 19px;
+    margin-top: 15px;
+}
+
+.demo-boton {
+    display: inline-block;
+    background: var(--cafe);
+    color: white;
+    padding: 12px 15px;
+    margin-top: 18px;
+    font-size: 10px;
+}
+
+.demo-boton:hover {
+    background: var(--tierra);
+}
+
+/* PRINCIPIOS */
+
+.principios {
+    padding: 85px 0;
+    background: var(--arena);
+}
+
+.principios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin-top: 38px;
+}
+
+.principio {
+    border-top: 1px solid #cbbba7;
+    padding-top: 20px;
+}
+
+.principio-numero {
+    font-family: 'Playfair Display', serif;
+    color: var(--tierra);
+    font-size: 24px;
+}
+
+.principio h3 {
+    font-size: 22px;
+    margin: 14px 0 9px;
+}
+
+.principio p {
+    color: #70665D;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* CIERRE */
+
+.cierre {
+    padding: 90px 0;
+    text-align: center;
+}
+
+.cierre .etiqueta {
+    margin-bottom: 18px;
+}
+
+.cierre h2 {
+    font-size: clamp(32px, 4vw, 47px);
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.25;
+}
+
+.cierre p {
+    max-width: 570px;
+    margin: 20px auto 0;
+    color: var(--gris);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* PIE */
+
+footer {
+    background: var(--cafe);
+    color: var(--blanco);
+    padding: 28px 0;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-contenido span {
+    color: #D0C5B8;
+    font-size: 10px;
+}
+
+/* ADAPTACIÓN */
+
+@media (max-width: 900px) {
+    .portada-grid,
+    .encabezado-seccion,
+    .territorio-grid,
+    .tipografia-grid,
+    .componentes-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .portada {
+        padding: 70px 0;
+    }
+
+    .portada-imagen {
+        height: 350px;
+    }
+
+    .colores-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .muestra-color {
+        height: 160px;
+    }
+
+    .territorio-imagenes {
+        max-width: 600px;
+    }
+
+    .territorio-imagenes img {
+        height: 230px;
+    }
+
+    .territorio-imagenes img:last-child {
+        height: 260px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contenedor {
+        width: 88%;
+    }
+
+    header {
+        height: 70px;
+    }
+
+    .nav-etiqueta {
+        display: none;
+    }
+
+    .portada {
+        padding: 60px 0;
+    }
+
+    h1 {
+        font-size: 44px;
+    }
+
+    .portada-imagen {
+        height: 290px;
+    }
+
+    .imagen-texto {
+        left: 10px;
+        bottom: 10px;
+    }
+
+    .intro,
+    .territorio,
+    .componentes,
+    .cierre {
+        padding: 65px 0;
+    }
+
+    .paleta,
+    .tipografia {
+        padding: 65px 0;
+    }
+
+    .seccion-titulo {
+        display: block;
+    }
+
+    .seccion-titulo p {
+        margin-top: 15px;
+    }
+
+    .colores-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .muestra-color {
+        height: 135px;
+    }
+
+    .color-info {
+        padding: 14px 12px;
+    }
+
+    .color-info h3 {
+        font-size: 16px;
+    }
+
+    .territorio-imagenes img {
+        height: 190px;
+    }
+
+    .territorio-imagenes img:last-child {
+        height: 220px;
+        margin-top: 25px;
+    }
+
+    .tipografia h2,
+    .componentes h2 {
+        font-size: 35px;
+    }
+
+    .demo-componentes {
+        padding: 17px;
+    }
+
+    .demo-tarjeta {
+        padding: 13px;
+    }
+
+    .demo-tarjeta h3 {
+        font-size: 16px;
+    }
+
+    .principios {
+        padding: 65px 0;
+    }
+
+    .principios-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .footer-contenido {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <a href="#" class="marca">
+            <div class="marca-icono">
+                <svg viewBox="0 0 56 44" aria-hidden="true">
+                    <path d="M3 34 17 13 26 25 35 7 53 34"></path>
+                    <path d="M12 34h32M21 34l7-9 7 9M7 39h42"></path>
+                </svg>
+            </div>
+
+            <div class="marca-texto">
+                <strong>Vicuña</strong>
+                <span>MUNICIPALIDAD</span>
+            </div>
+        </a>
+
+        <span class="nav-etiqueta">GUÍA DE IDENTIDAD VISUAL · 2026</span>
+    </div>
+</header>
+
+<main>
+
+    <!-- PORTADA -->
+    <section class="portada">
+        <div class="contenedor portada-grid">
+
+            <div>
+                <p class="etiqueta">PROPUESTA DE DISEÑO · 01</p>
+
+                <h1>Una identidad<br>que nace del<br>territorio.</h1>
+
+                <p class="introduccion">
+                    Una propuesta visual para la Municipalidad de Vicuña
+                    inspirada en los colores, las texturas y la identidad
+                    del Valle de Elqui. Un lenguaje gráfico que busca
+                    conectar el paisaje con la vida cotidiana de la comuna.
+                </p>
+
+                <span class="numero-portada">VICUÑA · VALLE DE ELQUI · CHILE</span>
+            </div>
+
+            <div class="portada-imagen">
+                <img
+                    src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=85"
+                    alt="Paisaje de montaña y valle">
+                <div class="imagen-texto">
+                    El paisaje como punto de partida.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONCEPTO -->
+    <section class="intro">
+        <div class="contenedor encabezado-seccion">
+
+            <div>
+                <span class="titulo-lateral">01 / CONCEPTO VISUAL</span>
+            </div>
+
+            <div>
+                <h2>El territorio como identidad.</h2>
+
+                <p>
+                    La propuesta toma como referencia el paisaje de Vicuña:
+                    sus montañas, la tierra, la luz del valle y la presencia
+                    del cielo. Estos elementos se traducen en una paleta
+                    de colores naturales y una composición visual tranquila,
+                    que busca transmitir cercanía, pertenencia y claridad.
+                </p>
+
+                <p style="margin-top:16px;">
+                    La intención no es representar el territorio de manera
+                    literal en cada elemento, sino utilizar sus características
+                    como base para construir una identidad visual coherente
+                    y reconocible.
+                </p>
+
+                <div class="frase">
+                    “Una estética que recoge los tonos del paisaje y los
+                    transforma en una experiencia digital cercana.”
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PALETA DE COLORES -->
+    <section class="paleta">
+        <div class="contenedor">
+
+            <div class="seccion-titulo">
+                <div>
+                    <p class="etiqueta">02 / SISTEMA CROMÁTICO</p>
+                    <h2>Colores del territorio</h2>
+                </div>
+
+                <p>
+                    Una paleta basada en tonos naturales, cálidos
+                    y suaves que mantienen una relación visual con
+                    el paisaje del Valle de Elqui.
+                </p>
+            </div>
+
+            <div class="colores-grid">
+
+                <article class="color-card">
+                    <div class="muestra-color" style="background:#A7C1D6;">
+                        <span>#A7C1D6</span>
+                    </div>
+                    <div class="color-info">
+                        <h3>Azul valle</h3>
+                        <code>#A7C1D6</code>
+                        <p>
+                            Evoca el cielo y la amplitud del paisaje.
+                            Aporta frescura y equilibrio visual.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="color-card">
+                    <div class="muestra-color" style="background:#EDE4D6;">
+                        <span>#EDE4D6</span>
+                    </div>
+                    <div class="color-info">
+                        <h3>Arena</h3>
+                        <code>#EDE4D6</code>
+                        <p>
+                            Remite a la tierra clara y a los tonos
+                            minerales. Funciona como fondo cálido.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="color-card">
+                    <div class="muestra-color" style="background:#8B7058;">
+                        <span>#8B7058</span>
+                    </div>
+                    <div class="color-info">
+                        <h3>Tierra</h3>
+                        <code>#8B7058</code>
+                        <p>
+                            Recuerda los suelos y las texturas
+                            naturales. Se utiliza en detalles y acentos.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="color-card">
+                    <div class="muestra-color" style="background:#3E2F27;">
+                        <span>#3E2F27</span>
+                    </div>
+                    <div class="color-info">
+                        <h3>Café profundo</h3>
+                        <code>#3E2F27</code>
+                        <p>
+                            Aporta contraste, profundidad y
+                            legibilidad en textos y fondos oscuros.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="color-card">
+                    <div class="muestra-color" style="background:#FAF9F6;">
+                        <span>#FAF9F6</span>
+                    </div>
+                    <div class="color-info">
+                        <h3>Blanco cálido</h3>
+                        <code>#FAF9F6</code>
+                        <p>
+                            Permite que el contenido respire y
+                            refuerza una composición limpia y ordenada.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PAISAJE Y REFERENCIAS -->
+    <section class="territorio">
+        <div class="contenedor territorio-grid">
+
+            <div class="territorio-imagenes">
+                <img
+                    src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=85"
+                    alt="Montañas y formas del paisaje">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85"
+                    alt="Luz natural sobre un paisaje">
+            </div>
+
+            <div class="territorio-texto">
+                <p class="etiqueta">03 / INSPIRACIÓN TERRITORIAL</p>
+
+                <h2>Una estética vinculada al paisaje.</h2>
+
+                <p>
+                    La selección cromática se inspira en los contrastes
+                    presentes en el territorio: el azul del cielo, los tonos
+                    claros de la tierra, los cafés de las montañas y la luz
+                    que caracteriza al valle.
+                </p>
+
+                <p>
+                    Esta relación se expresa a través de fondos cálidos,
+                    imágenes amplias y una combinación de tonos que evita
+                    los contrastes excesivamente saturados.
+                </p>
+
+                <ul class="lista-territorio">
+                    <li>Inspiración <span>Paisaje natural</span></li>
+                    <li>Paleta <span>Tonos tierra y cielo</span></li>
+                    <li>Composición <span>Simple y ordenada</span></li>
+                    <li>Atmósfera <span>Cercana y serena</span></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- TIPOGRAFÍA -->
+    <section class="tipografia">
+        <div class="contenedor tipografia-grid">
+
+            <div>
+                <p class="etiqueta">04 / SISTEMA TIPOGRÁFICO</p>
+
+                <h2>Contraste entre lo editorial y lo funcional.</h2>
+
+                <p class="tipografia-intro">
+                    La combinación de una tipografía serif con una sans serif
+                    permite construir una identidad que une carácter y
+                    legibilidad. Los títulos aportan personalidad, mientras
+                    que los textos facilitan la lectura de la información
+                    municipal.
+                </p>
+            </div>
+
+            <div>
+
+                <div class="ejemplo-tipo">
+                    <p class="tipo-etiqueta">TÍTULOS · PLAYFAIR DISPLAY</p>
+                    <div class="ejemplo-serif">
+                        Tradición, naturaleza<br>y comunidad
+                    </div>
+                    <p class="ejemplo-descripcion">
+                        Serif · Expresiva · Editorial · Elegante
+                    </p>
+                </div>
+
+                <div class="ejemplo-tipo">
+                    <p class="tipo-etiqueta">TEXTOS · DM SANS</p>
+                    <div class="ejemplo-sans">
+                        Información clara, accesible y cercana
+                        para todas las personas de la comuna.
+                    </div>
+                    <p class="ejemplo-descripcion">
+                        Sans serif · Funcional · Clara · Contemporánea
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- APLICACIÓN VISUAL -->
+    <section class="componentes">
+        <div class="contenedor componentes-grid">
+
+            <div>
+                <p class="etiqueta">05 / APLICACIÓN DIGITAL</p>
+
+                <h2>Una interfaz limpia y coherente.</h2>
+
+                <p class="componentes-intro">
+                    La paleta y la tipografía se aplican a una estructura
+                    sencilla, donde los espacios amplios, las imágenes
+                    del territorio y la jerarquía de los contenidos
+                    permiten encontrar la información con facilidad.
+                </p>
+            </div>
+
+            <div class="demo-componentes">
+
+                <div class="demo-nav">
+                    <span class="demo-logo">Vicuña.</span>
+                    <span>Municipalidad &nbsp; · &nbsp; Servicios &nbsp; · &nbsp; Noticias</span>
+                </div>
+
+                <div class="demo-tarjetas">
+                    <div class="demo-tarjeta">
+                        <small>01 / INFORMACIÓN</small>
+                        <h3>Trámites y servicios</h3>
+                    </div>
+
+                    <div class="demo-tarjeta" style="background:#A7C1D6;">
+                        <small>02 / COMUNIDAD</small>
+                        <h3>Noticias de Vicuña</h3>
+                    </div>
+                </div>
+
+                <a href="#principios" class="demo-boton">Conoce la propuesta →</a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PRINCIPIOS ESTÉTICOS -->
+    <section class="principios" id="principios">
+        <div class="contenedor">
+
+            <p class="etiqueta">06 / CRITERIOS DE DISEÑO</p>
+            <h2 style="font-size:clamp(32px, 3.5vw, 44px);">
+                Principios de la propuesta
+            </h2>
+
+            <div class="principios-grid">
+
+                <article class="principio">
+                    <span class="principio-numero">01</span>
+                    <h3>Natural</h3>
+                    <p>
+                        Los colores se inspiran en el paisaje y se combinan
+                        con fotografías que conectan la interfaz con
+                        el territorio.
+                    </p>
+                </article>
+
+                <article class="principio">
+                    <span class="principio-numero">02</span>
+                    <h3>Ordenada</h3>
+                    <p>
+                        Los espacios amplios, las alineaciones y una
+                        jerarquía tipográfica clara ayudan a organizar
+                        la información.
+                    </p>
+                </article>
+
+                <article class="principio">
+                    <span class="principio-numero">03</span>
+                    <h3>Cercana</h3>
+                    <p>
+                        Las tonalidades cálidas, el lenguaje directo
+                        y los accesos visibles buscan facilitar
+                        la relación con la comunidad.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CIERRE -->
+    <section class="cierre">
+        <div class="contenedor">
+            <p class="etiqueta">IDENTIDAD VISUAL · VICUÑA</p>
+
+            <h2>Un lenguaje visual que conecta territorio, comunidad e información.</h2>
+
+            <p>
+                La propuesta busca que la página municipal no sea solo
+                un espacio de consulta, sino también una expresión visual
+                de la identidad y el carácter del lugar.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="contenedor footer-contenido">
+        <span>Propuesta visual · Municipalidad de Vicuña</span>
+        <span>Paleta territorial · Sistema tipográfico · Criterios estéticos</span>
+    </div>
+</footer>
+
+</body>
+</html>
+```

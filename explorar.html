@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Turismo y territorio | Municipalidad de Vicuña</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --fondo: #f4f0e8;
+            --fondo-claro: #fbf9f5;
+            --beige: #e7ddcd;
+            --beige-oscuro: #d8c8b2;
+            --cafe: #79634e;
+            --cafe-oscuro: #382f27;
+            --texto: #413a33;
+            --texto-secundario: #797166;
+            --linea: #ded5c8;
+            --blanco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            background: var(--fondo);
+            color: var(--texto);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contenedor {
+            width: min(1160px, 90%);
+            margin: 0 auto;
+        }
+
+        /* ENCABEZADO */
+
+        .encabezado {
+            position: relative;
+            z-index: 1000;
+            background: var(--fondo-claro);
+            border-bottom: 1px solid var(--linea);
+        }
+
+        .barra-navegacion {
+            width: min(1320px, 92%);
+            min-height: 86px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            position: relative;
+        }
+
+        .marca {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--cafe-oscuro);
+            flex-shrink: 0;
+        }
+
+        .marca-simbolo {
+            width: 43px;
+            height: 37px;
+            color: #8B7058;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .marca-simbolo svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .marca-texto {
+            display: block;
+            line-height: normal;
+        }
+
+        .marca-principal {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 500;
+            line-height: 1;
+            color: var(--cafe-oscuro);
+        }
+
+        .marca-secundaria {
+            display: block;
+            margin-top: 6px;
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #76634E;
+        }
+
+        .barra-navegacion nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            list-style: none;
+        }
+
+        .menu a {
+            display: block;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--texto);
+            white-space: nowrap;
+            transition: color .2s ease;
+        }
+
+        .menu a:hover,
+        .menu a.activo {
+            color: var(--cafe);
+        }
+
+        .menu a.boton-tramites {
+            padding: 12px 16px;
+            background: var(--beige);
+            color: var(--cafe-oscuro);
+            border: 1px solid var(--beige);
+            transition: background .2s ease;
+        }
+
+        .menu a.boton-tramites:hover {
+            background: var(--beige-oscuro);
+        }
+
+        .menu-movil {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--linea);
+            padding: 9px 12px;
+            color: var(--cafe-oscuro);
+            font-family: inherit;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        /* PRESENTACIÓN */
+
+        .presentacion {
+            padding: 58px 0 54px;
+            background: var(--fondo-claro);
+            border-bottom: 1px solid var(--linea);
+        }
+
+        .presentacion-contenido {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 75px;
+            align-items: end;
+        }
+
+        .sobrelinea {
+            display: block;
+            margin-bottom: 13px;
+            color: var(--cafe);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .presentacion h1 {
+            max-width: 560px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 4.8vw, 59px);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            color: var(--cafe-oscuro);
+        }
+
+        .presentacion-texto {
+            max-width: 440px;
+            padding-bottom: 5px;
+        }
+
+        .presentacion-texto p {
+            color: var(--texto-secundario);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .presentacion-texto a {
+            display: inline-block;
+            margin-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--cafe);
+            color: var(--cafe-oscuro);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .presentacion-texto a:hover,
+        .enlace-texto:hover {
+            color: var(--cafe);
+        }
+
+        /* DATOS DEL TERRITORIO */
+
+        .datos-territorio {
+            padding: 0 0 75px;
+            background: var(--fondo-claro);
+        }
+
+        .datos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--linea);
+            border-bottom: 1px solid var(--linea);
+        }
+
+        .dato {
+            padding: 25px 28px 27px;
+            border-right: 1px solid var(--linea);
+        }
+
+        .dato:first-child {
+            border-left: 1px solid var(--linea);
+        }
+
+        .dato-numero {
+            display: block;
+            margin-bottom: 13px;
+            color: var(--cafe);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .dato h2 {
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+            font-size: 21px;
+            font-weight: 500;
+            color: var(--cafe-oscuro);
+        }
+
+        .dato p {
+            max-width: 290px;
+            color: var(--texto-secundario);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* LUGARES */
+
+        .lugares {
+            padding: 78px 0 88px;
+            background: var(--fondo);
+        }
+
+        .encabezado-seccion {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 35px;
+            margin-bottom: 36px;
+        }
+
+        .encabezado-seccion h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(34px, 4vw, 45px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--cafe-oscuro);
+        }
+
+        .descripcion-seccion {
+            max-width: 390px;
+            color: var(--texto-secundario);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .lugares-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .lugar {
+            min-width: 0;
+        }
+
+        .lugar-imagen {
+            height: 280px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background: var(--beige);
+        }
+
+        .lugar-imagen img {
+            transition: transform .5s ease;
+        }
+
+        .lugar:hover .lugar-imagen img {
+            transform: scale(1.035);
+        }
+
+        .lugar-categoria {
+            display: block;
+            margin-bottom: 9px;
+            color: var(--cafe);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+        }
+
+        .lugar h3 {
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 500;
+            line-height: 1.3;
+            color: var(--cafe-oscuro);
+        }
+
+        .lugar p {
+            color: var(--texto-secundario);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* PAISAJE Y CULTURA */
+
+        .paisaje {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--beige);
+        }
+
+        .paisaje-imagen {
+            min-height: 450px;
+            background:
+                linear-gradient(
+                    rgba(55, 45, 35, 0.06),
+                    rgba(55, 45, 35, 0.06)
+                ),
+                url("./valle1.jpg") center / cover no-repeat;
+        }
+
+        .paisaje-contenido {
+            display: flex;
+            align-items: center;
+            padding: 65px clamp(35px, 7vw, 100px);
+        }
+
+        .paisaje-contenido > div {
+            max-width: 460px;
+        }
+
+        .paisaje-contenido h2 {
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(34px, 4vw, 45px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--cafe-oscuro);
+        }
+
+        .paisaje-contenido p {
+            margin-bottom: 16px;
+            color: #71685d;
+            font-size: 12px;
+            line-height: 1.95;
+        }
+
+        .enlace-texto {
+            display: inline-block;
+            margin-top: 8px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--cafe);
+            color: var(--cafe-oscuro);
+            font-size: 12px;
+            font-weight: 700;
+            transition: color .2s ease;
+        }
+
+        /* RECOMENDACIONES */
+
+        .recomendaciones {
+            padding: 85px 0;
+            background: var(--fondo-claro);
+        }
+
+        .recomendaciones-grid {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .titulo-seccion {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(34px, 4vw, 45px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--cafe-oscuro);
+        }
+
+        .recomendaciones-intro p {
+            max-width: 370px;
+            margin-top: 17px;
+            color: var(--texto-secundario);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .lista-recomendaciones {
+            border-top: 1px solid var(--linea);
+        }
+
+        .recomendacion {
+            display: grid;
+            grid-template-columns: 35px 1fr;
+            gap: 18px;
+            padding: 21px 0;
+            border-bottom: 1px solid var(--linea);
+        }
+
+        .recomendacion-numero {
+            padding-top: 5px;
+            color: var(--cafe);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .recomendacion h3 {
+            margin-bottom: 6px;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--cafe-oscuro);
+        }
+
+        .recomendacion p {
+            color: var(--texto-secundario);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* CIERRE */
+
+        .cierre {
+            padding: 65px 0;
+            text-align: center;
+            color: white;
+            background:
+                linear-gradient(
+                    rgba(40, 35, 29, 0.68),
+                    rgba(40, 35, 29, 0.68)
+                ),
+                url("./cielo.jpg") center 60% / cover no-repeat;
+        }
+
+        .cierre-contenido {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .cierre .sobrelinea {
+            color: #eee2ce;
+        }
+
+        .cierre h2 {
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(34px, 4.5vw, 48px);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .cierre p {
+            max-width: 510px;
+            margin: 0 auto 25px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .boton-claro {
+            display: inline-block;
+            padding: 13px 21px;
+            background: var(--fondo-claro);
+            color: var(--cafe-oscuro);
+            font-size: 12px;
+            font-weight: 700;
+            transition: background .2s ease;
+        }
+
+        .boton-claro:hover {
+            background: var(--beige);
+        }
+
+        /* PIE DE PÁGINA */
+
+        .pie {
+            padding: 42px 0 24px;
+            background: var(--cafe-oscuro);
+            color: white;
+        }
+
+        .pie-superior {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .pie .marca-principal {
+            color: white;
+        }
+
+        .pie .marca-secundaria {
+            color: #d3c6b4;
+        }
+
+        .pie-descripcion {
+            max-width: 340px;
+            margin-top: 15px;
+            color: #d7cec2;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        .pie-enlaces {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .pie-enlaces a {
+            color: #eee5da;
+            font-size: 11px;
+        }
+
+        .pie-enlaces a:hover {
+            text-decoration: underline;
+        }
+
+        .pie-inferior {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 20px;
+            color: #c9beb0;
+            font-size: 10px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1100px) {
+            .barra-navegacion {
+                gap: 22px;
+            }
+
+            .menu {
+                gap: 16px;
+            }
+
+            .menu a {
+                font-size: 10px;
+            }
+
+            .presentacion-contenido {
+                gap: 40px;
+            }
+
+            .lugar-imagen {
+                height: 230px;
+            }
+
+            .recomendaciones-grid {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .barra-navegacion {
+                width: calc(100% - 40px);
+                min-height: 82px;
+                flex-wrap: wrap;
+                gap: 16px;
+                padding: 18px 0;
+            }
+
+            .menu-movil {
+                display: block;
+            }
+
+            .barra-navegacion nav {
+                flex: 1 0 100%;
+            }
+
+            .menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                padding: 15px 20px;
+                background: var(--fondo-claro);
+                border-bottom: 1px solid var(--linea);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .menu.activo {
+                display: flex;
+            }
+
+            .menu a {
+                padding: 13px 0;
+                border-bottom: 1px solid var(--linea);
+                font-size: 12px;
+            }
+
+            .menu a.boton-tramites {
+                margin-top: 12px;
+                padding: 13px;
+                text-align: center;
+            }
+
+            .presentacion {
+                padding: 48px 0;
+            }
+
+            .presentacion-contenido {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .presentacion h1 {
+                max-width: 650px;
+            }
+
+            .datos-territorio {
+                padding-bottom: 55px;
+            }
+
+            .dato {
+                padding: 22px;
+            }
+
+            .lugares-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .lugar:last-child {
+                grid-column: 1 / -1;
+                max-width: calc(50% - 14px);
+            }
+
+            .paisaje {
+                grid-template-columns: 1fr;
+            }
+
+            .paisaje-imagen {
+                min-height: 350px;
+            }
+
+            .paisaje-contenido {
+                padding: 55px 6%;
+            }
+
+            .recomendaciones-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .contenedor {
+                width: 88%;
+            }
+
+            .barra-navegacion {
+                width: calc(100% - 30px);
+                gap: 12px;
+            }
+
+            .marca-principal {
+                font-size: 22px;
+            }
+
+            .marca-simbolo {
+                width: 35px;
+                height: 34px;
+            }
+
+            .marca-secundaria {
+                font-size: 8px;
+                letter-spacing: 1.5px;
+            }
+
+            .presentacion {
+                padding: 42px 0;
+            }
+
+            .presentacion h1 {
+                font-size: 40px;
+            }
+
+            .presentacion-texto p {
+                font-size: 12px;
+            }
+
+            .datos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dato,
+            .dato:first-child {
+                border-left: 1px solid var(--linea);
+                border-right: 1px solid var(--linea);
+                border-bottom: 1px solid var(--linea);
+            }
+
+            .dato-numero {
+                margin-bottom: 8px;
+            }
+
+            .lugares {
+                padding: 55px 0 60px;
+            }
+
+            .encabezado-seccion {
+                display: block;
+                margin-bottom: 28px;
+            }
+
+            .descripcion-seccion {
+                margin-top: 13px;
+            }
+
+            .lugares-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .lugar:last-child {
+                grid-column: auto;
+                max-width: none;
+            }
+
+            .lugar-imagen {
+                height: 240px;
+            }
+
+            .paisaje-imagen {
+                min-height: 260px;
+            }
+
+            .paisaje-contenido {
+                padding: 43px 6%;
+            }
+
+            .recomendaciones {
+                padding: 60px 0;
+            }
+
+            .cierre {
+                padding: 52px 0;
+            }
+
+            .pie-superior {
+                flex-direction: column;
+                gap: 28px;
+            }
+
+            .pie-enlaces {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .pie-inferior {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header class="encabezado">
+        <div class="contenedor barra-navegacion">
+
+            <a href="index.html" class="marca" aria-label="Municipalidad de Vicuña, inicio">
+                <span class="marca-simbolo" aria-hidden="true">
+                    <svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 34 17 13 26 25 35 7 53 34" />
+                        <path d="M12 34h32M21 34l7-9 7 9M7 39h42" />
+                    </svg>
+                </span>
+
+                <span class="marca-texto">
+                    <span class="marca-principal">Vicuña</span>
+                    <span class="marca-secundaria">MUNICIPALIDAD</span>
+                </span>
+            </a>
+
+            <button class="menu-movil" id="botonMenu"
+                aria-expanded="false" aria-controls="menuPrincipal">
+                Menú ☰
+            </button>
+
+            <nav aria-label="Navegación principal">
+                <ul class="menu" id="menuPrincipal">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="municipalidad.html#autoridades">Municipalidad</a></li>
+                    <li><a href="tramites.html">Trámites y servicios</a></li>
+                    <li><a href="index.html#noticias">Noticias</a></li>
+                    <li><a class="activo" href="explorar.html">Turismo y territorio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="tramites.html" class="boton-tramites">Trámites en línea ↗</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PRESENTACIÓN -->
+
+        <section class="presentacion" id="inicio">
+            <div class="contenedor presentacion-contenido">
+
+                <div>
+                    <span class="sobrelinea">Turismo y territorio</span>
+                    <h1>Conoce Vicuña y el Valle de Elqui</h1>
+                </div>
+
+                <div class="presentacion-texto">
+                    <p>
+                        Paisajes, cultura e historia se encuentran en nuestra
+                        comuna. Descubre algunos de sus lugares y conoce
+                        aquello que hace de Vicuña un territorio único.
+                    </p>
+
+                    <a href="#lugares">Explorar lugares ↓</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DATOS DEL TERRITORIO -->
+
+        <section class="datos-territorio">
+            <div class="contenedor">
+                <div class="datos-grid">
+
+                    <article class="dato">
+                        <span class="dato-numero">01</span>
+                        <h2>Valle de Elqui</h2>
+                        <p>
+                            Un entorno de montañas, valles y localidades
+                            que caracteriza el paisaje de la comuna.
+                        </p>
+                    </article>
+
+                    <article class="dato">
+                        <span class="dato-numero">02</span>
+                        <h2>Cultura y patrimonio</h2>
+                        <p>
+                            La historia, las tradiciones y los espacios
+                            que forman parte de la identidad local.
+                        </p>
+                    </article>
+
+                    <article class="dato">
+                        <span class="dato-numero">03</span>
+                        <h2>Cielos y naturaleza</h2>
+                        <p>
+                            Los cielos despejados y el paisaje natural
+                            son parte de los atractivos del territorio.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- LUGARES PARA CONOCER -->
+
+        <section class="lugares" id="lugares">
+            <div class="contenedor">
+
+                <div class="encabezado-seccion">
+                    <div>
+                        <span class="sobrelinea">Recorre la comuna</span>
+                        <h2>Lugares para conocer</h2>
+                    </div>
+
+                    <p class="descripcion-seccion">
+                        Explora distintos lugares para acercarte a los
+                        paisajes, la historia y las tradiciones de Vicuña.
+                    </p>
+                </div>
+
+                <div class="lugares-grid">
+
+                    <article class="lugar">
+                        <div class="lugar-imagen">
+                            <img src="./valle1.jpg"
+                                alt="Paisaje del Valle de Elqui">
+                        </div>
+
+                        <span class="lugar-categoria">Paisaje natural</span>
+                        <h3>Valle de Elqui</h3>
+
+                        <p>
+                            Recorre un paisaje de montañas, valles y pequeñas
+                            localidades. Un entorno que permite apreciar
+                            la geografía y la identidad de la zona.
+                        </p>
+                    </article>
+
+                    <article class="lugar">
+                        <div class="lugar-imagen">
+                            <img src="./centro.jpg"
+                                alt="Centro y arquitectura de Vicuña">
+                        </div>
+
+                        <span class="lugar-categoria">Historia y cultura</span>
+                        <h3>Centro de Vicuña</h3>
+
+                        <p>
+                            Conoce los espacios urbanos, la arquitectura y
+                            los lugares que forman parte de la historia y
+                            de la vida cotidiana de la ciudad.
+                        </p>
+                    </article>
+
+                    <article class="lugar">
+                        <div class="lugar-imagen">
+                            <img src="./carnaval.jpg"
+                                alt="Tradiciones y actividades de Vicuña">
+                        </div>
+
+                        <span class="lugar-categoria">Vida local</span>
+                        <h3>Tradiciones del valle</h3>
+
+                        <p>
+                            Acércate a las costumbres, los productos y las
+                            experiencias que permiten conocer la cultura
+                            de las comunidades del territorio.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PAISAJE Y CULTURA -->
+
+        <section class="paisaje">
+            <div class="paisaje-imagen"
+                role="img"
+                aria-label="Paisaje característico del Valle de Elqui">
+            </div>
+
+            <div class="paisaje-contenido">
+                <div>
+                    <span class="sobrelinea">Naturaleza y territorio</span>
+
+                    <h2>Un paisaje que nos identifica</h2>
+
+                    <p>
+                        Las montañas, la amplitud del valle y la luz del
+                        entorno forman parte del carácter de Vicuña.
+                        El paisaje acompaña la vida de la comuna y es
+                        parte de su historia e identidad.
+                    </p>
+
+                    <p>
+                        Conocer estos espacios permite comprender mejor
+                        la relación entre naturaleza, cultura y comunidad.
+                    </p>
+
+                    <a href="#recomendaciones" class="enlace-texto">
+                        Recomendaciones para tu visita →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECOMENDACIONES -->
+
+        <section class="recomendaciones" id="recomendaciones">
+            <div class="contenedor recomendaciones-grid">
+
+                <div class="recomendaciones-intro">
+                    <span class="sobrelinea">Prepara tu recorrido</span>
+
+                    <h2 class="titulo-seccion">
+                        Antes de visitar
+                    </h2>
+
+                    <p>
+                        Ten en cuenta algunas recomendaciones para
+                        organizar tu recorrido y disfrutar de los
+                        distintos sectores de la comuna.
+                    </p>
+                </div>
+
+                <div class="lista-recomendaciones">
+
+                    <article class="recomendacion">
+                        <span class="recomendacion-numero">01</span>
+                        <div>
+                            <h3>Planifica tu recorrido</h3>
+                            <p>
+                                Revisa las distancias, los horarios y la
+                                disponibilidad de los lugares que quieras visitar.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="recomendacion">
+                        <span class="recomendacion-numero">02</span>
+                        <div>
+                            <h3>Considera el clima</h3>
+                            <p>
+                                Infórmate sobre las condiciones del tiempo
+                                y lleva agua, protección solar y ropa adecuada.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="recomendacion">
+                        <span class="recomendacion-numero">03</span>
+                        <div>
+                            <h3>Cuida el entorno</h3>
+                            <p>
+                                Respeta los espacios naturales, sigue las
+                                indicaciones locales y no dejes residuos.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="recomendacion">
+                        <span class="recomendacion-numero">04</span>
+                        <div>
+                            <h3>Apoya la vida local</h3>
+                            <p>
+                                Conoce los comercios, las tradiciones y
+                                las iniciativas de las comunidades.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CIERRE -->
+
+        <section class="cierre">
+            <div class="contenedor">
+                <div class="cierre-contenido">
+
+                    <span class="sobrelinea">Vicuña te espera</span>
+
+                    <h2>Descubre nuestro territorio</h2>
+
+                    <p>
+                        Conoce los paisajes, la historia y las tradiciones
+                        que forman parte de la identidad de Vicuña.
+                    </p>
+
+                    <a href="index.html" class="boton-claro">
+                        Volver al inicio →
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer class="pie" id="contacto">
+        <div class="contenedor">
+
+            <div class="pie-superior">
+
+                <div>
+                    <a href="index.html" class="marca">
+                        <span class="marca-texto">
+                            <span class="marca-principal">Vicuña</span>
+                            <span class="marca-secundaria">MUNICIPALIDAD</span>
+                        </span>
+                    </a>
+
+                    <p class="pie-descripcion">
+                        Información municipal, servicios y turismo
+                        de la comuna de Vicuña.
+                    </p>
+                </div>
+
+                <nav class="pie-enlaces" aria-label="Enlaces del pie de página">
+                    <a href="municipalidad.html">Municipalidad</a>
+                    <a href="tramites.html">Trámites y servicios</a>
+                    <a href="index.html#noticias">Noticias</a>
+                    <a href="explorar.html">Turismo y territorio</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+
+            </div>
+
+            <div class="pie-inferior">
+                <span>Municipalidad de Vicuña</span>
+                <span>Información y servicios para la comunidad</span>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- MENÚ PARA CELULARES -->
+
+    <script>
+        const botonMenu = document.getElementById("botonMenu");
+        const menuPrincipal = document.getElementById("menuPrincipal");
+
+        botonMenu.addEventListener("click", function () {
+            const menuAbierto = menuPrincipal.classList.toggle("activo");
+
+            botonMenu.setAttribute("aria-expanded", menuAbierto);
+            botonMenu.textContent = menuAbierto ? "Cerrar ✕" : "Menú ☰";
+        });
+
+        const enlacesMenu = menuPrincipal.querySelectorAll("a");
+
+        enlacesMenu.forEach(function (enlace) {
+            enlace.addEventListener("click", function () {
+                menuPrincipal.classList.remove("activo");
+                botonMenu.setAttribute("aria-expanded", "false");
+                botonMenu.textContent = "Menú ☰";
+            });
+        });
+    </script>
+
+</body>
+</html>

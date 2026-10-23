@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trámites en línea | Municipalidad de Vicuña</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --fondo: #F6F1E8;
+  --fondo-claro: #FBF8F2;
+  --beige: #EAE0D0;
+  --arena: #D8C7AE;
+  --cafe: #514232;
+  --cafe-oscuro: #3D3227;
+  --cafe-medio: #76634E;
+  --texto: #40382F;
+  --secundario: #766D62;
+  --linea: #D9CEBE;
+  --blanco: #FFFFFF;
+  --azul: #A7C1D6;
+  --ancho: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--blanco);
+  color: var(--cafe);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contenedor {
+  width: min(var(--ancho), calc(100% - 64px));
+  margin: auto;
+}
+
+/* ENCABEZADO: MISMO DISEÑO QUE MUNICIPALIDAD */
+
+header {
+  background: var(--fondo-claro);
+  position: relative;
+}
+
+.cabecera {
+  width: min(1320px, 92%);
+  min-height: 88px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--cafe-oscuro);
+  flex-shrink: 0;
+}
+
+.logo-marca {
+  width: 43px;
+  height: 37px;
+  color: #8B7058;
+}
+
+.logo-marca svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.logo-texto strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.logo-texto span {
+  display: block;
+  margin-top: 6px;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: var(--cafe-medio);
+}
+
+nav {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: 0;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 27px;
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color .2s;
+}
+
+.menu a:hover,
+.menu a.activo {
+  color: #8B7058;
+}
+
+.menu a.acceso {
+  background: var(--azul);
+  padding: 13px 17px;
+  border-radius: 2px;
+  color: #3E2F27;
+}
+
+/* CONTENIDO */
+
+main {
+  padding: 0 0 88px;
+}
+
+.migas {
+  padding-top: 32px;
+  margin-bottom: 30px;
+  font-size: 11px;
+  color: var(--secundario);
+}
+
+.migas a:hover {
+  text-decoration: underline;
+}
+
+.portada {
+  padding: 8px 0 42px;
+  border-bottom: 1px solid var(--linea);
+}
+
+.portada-contenido {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: end;
+  gap: 55px;
+}
+
+.etiqueta {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cafe-medio);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+h1 {
+  margin-top: 12px;
+  max-width: 720px;
+  color: var(--cafe-oscuro);
+  font-size: clamp(36px, 4.4vw, 52px);
+  line-height: 1.15;
+}
+
+.portada-descripcion {
+  max-width: 470px;
+  padding-bottom: 5px;
+  color: var(--secundario);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.franja-informativa {
+  margin-top: 32px;
+  padding: 18px 21px;
+  background: var(--beige);
+  border-left: 3px solid var(--cafe-medio);
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.icono-informacion {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--cafe-medio);
+  border-radius: 50%;
+  color: var(--cafe);
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+}
+
+.franja-informativa strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--cafe-oscuro);
+  font-size: 12px;
+}
+
+.franja-informativa p {
+  color: var(--cafe-medio);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* CATEGORÍAS DE TRÁMITES */
+
+.seccion-tramites {
+  padding: 52px 0 65px;
+}
+
+.cabecera-seccion {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 28px;
+}
+
+.cabecera-seccion h2 {
+  margin-top: 10px;
+  color: var(--cafe-oscuro);
+  font-size: clamp(25px, 3vw, 32px);
+  line-height: 1.3;
+}
+
+.cabecera-seccion p {
+  margin-top: 8px;
+  color: var(--secundario);
+  font-size: 12px;
+}
+
+.buscador {
+  width: min(320px, 100%);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.buscador input {
+  width: 100%;
+  padding: 13px 15px 13px 42px;
+  border: 1px solid var(--linea);
+  border-radius: 2px;
+  outline: none;
+  background: var(--fondo-claro);
+  color: var(--texto);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+}
+
+.buscador input:focus {
+  border-color: var(--cafe-medio);
+}
+
+.buscador input::placeholder {
+  color: #94897B;
+}
+
+.buscador-icono {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cafe-medio);
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.rejilla-tramites {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--linea);
+  border-left: 1px solid var(--linea);
+}
+
+.tarjeta {
+  min-width: 0;
+  min-height: 232px;
+  padding: 25px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--blanco);
+  border-right: 1px solid var(--linea);
+  border-bottom: 1px solid var(--linea);
+  transition: background .2s ease;
+}
+
+.tarjeta:hover {
+  background: var(--fondo-claro);
+}
+
+.tarjeta-numero {
+  display: block;
+  margin-bottom: 21px;
+  color: #9B8770;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.tarjeta h3 {
+  margin-bottom: 10px;
+  color: var(--cafe-oscuro);
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.tarjeta p {
+  margin-bottom: 23px;
+  color: var(--secundario);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.tarjeta .accion {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--linea);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--cafe-medio);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.tarjeta .accion span:last-child {
+  font-size: 17px;
+  transition: transform .2s ease;
+}
+
+.tarjeta:hover .accion span:last-child {
+  transform: translateX(4px);
+}
+
+.tarjeta .accion:hover {
+  color: var(--cafe-oscuro);
+}
+
+.sin-resultados {
+  display: none;
+  padding: 30px;
+  border: 1px solid var(--linea);
+  background: var(--fondo-claro);
+  color: var(--secundario);
+  text-align: center;
+  font-size: 13px;
+}
+
+/* BLOQUE DE AYUDA */
+
+.ayuda {
+  padding: 34px 38px;
+  background: var(--cafe-oscuro);
+  color: var(--fondo-claro);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 30px;
+}
+
+.ayuda h2 {
+  margin-bottom: 8px;
+  font-size: 26px;
+  line-height: 1.3;
+}
+
+.ayuda p {
+  max-width: 620px;
+  color: #D8CBBB;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.boton-ayuda {
+  display: inline-block;
+  padding: 13px 18px;
+  border: 1px solid #BDA990;
+  color: var(--fondo-claro);
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 600;
+  transition: background .2s ease;
+}
+
+.boton-ayuda:hover {
+  background: rgba(255,255,255,.08);
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+  background: var(--cafe-oscuro);
+  color: var(--fondo);
+  padding: 28px 0;
+  margin-top: 0;
+}
+
+.pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.pie .logo-texto strong {
+  color: var(--fondo-claro);
+  font-size: 23px;
+}
+
+.pie .logo-texto span {
+  color: #D2BFA7;
+}
+
+.pie .logo-marca {
+  color: #D2BFA7;
+}
+
+.derechos {
+  text-align: right;
+  font-size: 10px;
+  color: #D8CBBB;
+}
+
+.derechos div {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 6px;
+}
+
+.derechos a:hover {
+  text-decoration: underline;
+}
+
+/* ADAPTACIÓN A PANTALLAS */
+
+@media (max-width: 1100px) {
+  .cabecera {
+    gap: 22px;
+  }
+
+  .menu {
+    gap: 17px;
+  }
+
+  .menu a {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 850px) {
+  .contenedor {
+    width: calc(100% - 40px);
+  }
+
+  .cabecera {
+    width: calc(100% - 40px);
+    min-height: 82px;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 18px 0;
+  }
+
+  nav {
+    padding-bottom: 15px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 16px 22px;
+  }
+
+  .portada-contenido {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .portada-descripcion {
+    max-width: 650px;
+  }
+
+  .rejilla-tramites {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ayuda {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .boton-ayuda {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 560px) {
+  .contenedor {
+    width: calc(100% - 30px);
+  }
+
+  .cabecera {
+    width: calc(100% - 30px);
+    min-height: 82px;
+    gap: 12px;
+  }
+
+  .logo-marca {
+    width: 35px;
+    height: 34px;
+  }
+
+  .logo-texto strong {
+    font-size: 22px;
+  }
+
+  .logo-texto span {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  nav {
+    padding-bottom: 12px;
+    width: 100%;
+  }
+
+  .menu {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 15px;
+    padding-bottom: 5px;
+  }
+
+  .menu a {
+    white-space: nowrap;
+  }
+
+  main {
+    padding-bottom: 55px;
+  }
+
+  .migas {
+    padding-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .portada {
+    padding-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .franja-informativa {
+    padding: 16px;
+  }
+
+  .seccion-tramites {
+    padding: 38px 0 42px;
+  }
+
+  .cabecera-seccion {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .buscador {
+    width: 100%;
+  }
+
+  .rejilla-tramites {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta {
+    min-height: 195px;
+    padding: 22px;
+  }
+
+  .tarjeta-numero {
+    margin-bottom: 15px;
+  }
+
+  .ayuda {
+    padding: 27px 22px;
+  }
+
+  .ayuda h2 {
+    font-size: 23px;
+  }
+
+  .pie {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .derechos {
+    text-align: left;
+  }
+
+  .derechos div {
+    justify-content: flex-start;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="contenedor cabecera">
+    <a class="logo" href="index.html" aria-label="Municipalidad de Vicuña, inicio">
+      <span class="logo-marca" aria-hidden="true">
+        <svg viewBox="0 0 56 44">
+          <path d="M3 34 17 13 26 25 35 7 53 34"/>
+          <path d="M12 34h32M21 34l7-9 7 9M7 39h42"/>
+        </svg>
+      </span>
+      <span class="logo-texto">
+        <strong>Vicuña</strong>
+        <span>MUNICIPALIDAD</span>
+      </span>
+    </a>
+
+    <nav aria-label="Navegación principal">
+      <ul class="menu">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="municipalidad.html#autoridades">Municipalidad</a></li>
+        <li><a href="educacion.html">Educación Y Salud</a></li>
+        <li><a href="index.html#servicios">Trámites y servicios</a></li>
+        <li><a href="index.html#noticias">Noticias</a></li>
+        <li><a href="index.html#territorio">Turismo y territorio</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a class="acceso activo" href="tramites.html">Trámites en línea ↗</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="contenedor">
+
+    <div class="migas">
+      <a href="index.html">Inicio</a> &nbsp;/&nbsp; Trámites en línea
+    </div>
+
+    <section class="portada">
+      <div class="portada-contenido">
+        <div>
+          <span class="etiqueta">Servicios municipales</span>
+          <h1>Trámites y servicios en línea</h1>
+        </div>
+
+        <p class="portada-descripcion">
+          Encuentra información sobre los principales trámites municipales,
+          sus requisitos y los canales disponibles para realizar consultas
+          y solicitudes.
+        </p>
+      </div>
+
+
+    <section class="seccion-tramites" id="listado">
+      <div class="cabecera-seccion">
+        <div>
+          <span class="etiqueta">Atención ciudadana</span>
+          <h2>¿Qué trámite necesitas realizar?</h2>
+          <p>Selecciona una categoría para consultar la información correspondiente.</p>
+        </div>
+
+        <label class="buscador">
+          <span class="buscador-icono" aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            id="busqueda"
+            placeholder="Buscar un trámite..."
+            aria-label="Buscar un trámite"
+          >
+        </label>
+      </div>
+
+      <div class="rejilla-tramites" id="rejillaTramites">
+
+        <article class="tarjeta" data-texto="patentes permisos comerciales negocios">
+          <span class="tarjeta-numero">01 / SERVICIOS</span>
+          <h3>Patentes y permisos</h3>
+          <p>Información relacionada con patentes comerciales, actividades económicas y permisos municipales.</p>
+          <a class="accion" href="index.html#servicios">
+            <span>Consultar información</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="tarjeta" data-texto="permiso circulación vehículos automóviles">
+          <span class="tarjeta-numero">02 / SERVICIOS</span>
+          <h3>Permisos de circulación</h3>
+          <p>Orientación sobre documentación, pagos y consultas relacionadas con el permiso de circulación.</p>
+          <a class="accion" href="index.html#servicios">
+            <span>Consultar información</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="tarjeta" data-texto="solicitudes certificados documentos">
+          <span class="tarjeta-numero">03 / SERVICIOS</span>
+          <h3>Solicitudes y certificados</h3>
+          <p>Accede a información sobre solicitudes, certificados y documentación municipal.</p>
+          <a class="accion" href="index.html#contacto">
+            <span>Consultar información</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="tarjeta" data-texto="pagos consultas contribuciones derechos municipales">
+          <span class="tarjeta-numero">04 / SERVICIOS</span>
+          <h3>Pagos y consultas</h3>
+          <p>Revisa las opciones de consulta y orientación para pagos asociados a servicios municipales.</p>
+          <a class="accion" href="index.html#contacto">
+            <span>Consultar información</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="tarjeta" data-texto="dirección obras municipales dom construcción edificación urbanismo">
+          <span class="tarjeta-numero">05 / SERVICIOS</span>
+          <h3>Dirección de Obras Municipales</h3>
+          <p>Información general sobre permisos de edificación, obras y consultas relacionadas con la DOM.</p>
+          <a class="accion" href="index.html#contacto">
+            <span>Consultar información</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="tarjeta" data-texto="otros trámites municipales ayuda orientación solicitudes">
+          <span class="tarjeta-numero">06 / SERVICIOS</span>
+          <h3>Otros trámites municipales</h3>
+          <p>Encuentra orientación para otras solicitudes y servicios disponibles en la municipalidad.</p>
+          <a class="accion" href="index.html#contacto">
+            <span>Consultar información</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+      </div>
+
+      <div class="sin-resultados" id="sinResultados">
+        No encontramos trámites relacionados con tu búsqueda. Intenta con otra palabra.
+      </div>
+    </section>
+
+    <section class="ayuda" id="ayuda">
+      <div>
+        <h2>¿Necesitas orientación?</h2>
+        <p>
+          Si no encuentras el trámite que buscas o necesitas confirmar sus requisitos,
+          puedes comunicarte con la municipalidad a través de sus canales de atención.
+        </p>
+      </div>
+      <a href="index.html#contacto" class="boton-ayuda">
+        Contactar a la municipalidad ↗
+      </a>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="contenedor pie">
+    <a class="logo" href="index.html" aria-label="Municipalidad de Vicuña, volver al inicio">
+      <span class="logo-marca" aria-hidden="true">
+        <svg viewBox="0 0 56 44">
+          <path d="M3 34 17 13 26 25 35 7 53 34"/>
+          <path d="M12 34h32M21 34l7-9 7 9M7 39h42"/>
+        </svg>
+      </span>
+      <span class="logo-texto">
+        <strong>Vicuña</strong>
+        <span>MUNICIPALIDAD</span>
+      </span>
+    </a>
+
+    <div class="derechos">
+      © Municipalidad de Vicuña.
+      <div>
+        <a href="index.html#inicio">Inicio</a>
+        <a href="municipalidad.html#autoridades">Municipalidad</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const busqueda = document.getElementById('busqueda');
+const tarjetas = document.querySelectorAll('.tarjeta');
+const sinResultados = document.getElementById('sinResultados');
+
+function normalizar(texto) {
+  return texto
+    .toLocaleLowerCase('es')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim();
+}
+
+busqueda.addEventListener('input', function () {
+  const termino = normalizar(this.value);
+  let visibles = 0;
+
+  tarjetas.forEach(function (tarjeta) {
+    const contenido = normalizar(
+      tarjeta.innerText + ' ' + tarjeta.dataset.texto
+    );
+
+    const coincide = contenido.includes(termino);
+
+    tarjeta.style.display = coincide ? 'flex' : 'none';
+
+    if (coincide) {
+      visibles++;
+    }
+  });
+
+  sinResultados.style.display = visibles === 0 ? 'block' : 'none';
+});
+</script>
+
+</body>
+</html>
+```
